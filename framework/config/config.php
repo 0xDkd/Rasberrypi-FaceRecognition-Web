@@ -25,7 +25,7 @@ return array(
     'port'               => '3306',
     'charset'            => 'utf8',
     //数据库表的前缀
-    'table_prefix'       => 'ask_',
+    'table_prefix'       => 'face_',
     //Smarty配置选项
     'left_delimiter'     => '<{',
     'right_delimiter'    => '}>',

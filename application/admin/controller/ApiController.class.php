@@ -12,6 +12,7 @@ namespace admin\controller;
 use framework\core\Controller;
 use framework\core\Factory;
 use framework\tools\Encrypt;
+use framework\tools\HttpRequest;
 
 class ApiController extends Controller
 {
@@ -30,16 +31,22 @@ class ApiController extends Controller
 
     public function getData()
     {
-        if (empty($_POST)) {
-            return $this->rejectGet();
+        $inputstr = file_get_contents("php://input");
+        if (empty($inputstr)) {
+            //return $this->rejectGet();
+            var_dump($this->rejectGet());
         } else {
-            $data = json_decode($_POST);
+            $urldecodestr = urldecode($inputstr);
+            $data = json_decode($urldecodestr,true);;
+            var_dump($data);
             $en = new Encrypt();
             $va = $en->encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
             //Token failed
             if ($va != $data['token']) {
-                return $this->statusCode['405'];
-            }
+                //return $this->statusCode['405'];
+                var_dump($this->statusCode['405']);
+                return;
+        }
             //Check keys
             $keys = array_keys($data);
             //30s Must upload data
@@ -50,8 +57,7 @@ class ApiController extends Controller
                     return $this->jstatusCode['406'];
                 }
             }
-            //Data is true
-            //
+            $this->doInsertData($data);
 
         }
     }
@@ -128,17 +134,21 @@ class ApiController extends Controller
         $keys = ['user_id', 'user_pic', 'user_name', 'time', 'token', 'status1'];
         $keys_must = array('user_id', 'user_pic', 'user_name', 'time', 'token', 'status');
         $pa = true;
-        foreach ($keys as $key) {
+        /*foreach ($keys as $key) {
             if (!in_array($key, $keys_must)) {
                 var_dump($this->statusCode['406']);
                 return $this->statusCode['406'];
             }
-        }
+        }*/
+        $curl = new HttpRequest();
+        $curl->url = 'http://face.test/?m=admin&c=api&a=getData';
+        $result = $curl->send($js);
+        var_dump($result);
     }
 
     private function showInfo()
     {
-
+        
     }
 
 }
