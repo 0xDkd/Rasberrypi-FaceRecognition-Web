@@ -1,0 +1,77 @@
+<{extends file="layout.html"}>
+<{block name="content"}>
+    <!--DashBroad-->
+    <div class="col-md-10 quota_content">
+        <h1>信息概览</h1>
+        <br>
+        <div class="fix_side">
+            <div class="col-md-3">
+                <div class="panel panel-success" style="background-color: #4ca5fc">
+                    <div class="panel-body">
+                        <div class="panel-title">
+                            <h3>认证用户</h3>
+                        </div>
+                        <div style="float: right">
+                            <i class="fa fa-users fa-5x"></i>
+                        </div>
+                        <hr>
+                        <b><{$num['user_num']}>人</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-success" style="background-color: #975cff">
+                    <div class="panel-body">
+                        <div class="panel-title">
+                            <h3>识别次数</h3>
+                        </div>
+                        <div style="float: right">
+                            <i class="fa fa-pie-chart fa-5x"></i>
+                        </div>
+                        <hr>
+                        <b><{$num['scan_num']}>次</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default" style="background-color: #00bb00">
+                    <div class="panel-body">
+                        <div class="panel-title">
+                            <h3>成功识别</h3>
+                        </div>
+                        <div style="float: right">
+                            <i class="fa fa-key fa-5x"></i>
+                        </div>
+                        <hr>
+                        <b><{$num['scan_right_num']}>次</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default" style="background-color: #78909c">
+                    <div class="panel-body">
+                        <div class="panel-title">
+                            <h3>非法识别</h3>
+                        </div>
+                        <div style="float: right">
+                            <i class="fa fa-warning fa-5x"></i>
+                        </div>
+                        <hr>
+                        <b><{$num['scan_ban_num']}>次</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 " style="margin-left: 15px;margin-right: 15px">
+                <div class="panel panel-default">
+                    <div class="panel-heading">使用须知</div>
+                    <div class="panel-body">
+                        <b>本项目的代码和硬件只能使用于实验环境，不能保证100%的准确率，造成任何损失本项目不负责。
+                            <br>
+                            你可以在这里查看人脸识别的总次数，人脸识别成功的用户，人脸识别失败的用户（非法识别），以及注册认证的用户（即人脸识别库中拥有这些用户的人脸信息）</b>
+                    </div>
+                </div>
+            </div>
+            <!--/DashBroad-->
+        </div>
+    </div>
+<{/block}>

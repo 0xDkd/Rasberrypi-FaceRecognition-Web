@@ -10,12 +10,20 @@ namespace admin\controller;
 
 
 use framework\core\Controller;
+use framework\core\Factory;
 
 class IndexController extends Controller
 {
     public function indexAction()
     {
-        $this->smarty->display('index.html');
+        if ($this->isLogin()) {
+            $model = Factory::M('RegisterUser');
+            $num = $model->getNum();
+            $this->smarty->assign('num',$num);
+            $this->smarty->display('home/home.html');
+        } else {
+            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+        }
     }
 
     public function msg()
@@ -23,7 +31,7 @@ class IndexController extends Controller
         $this->smarty->display('msg.html');
     }
 
-    public function  login()
+    public function login()
     {
         $this->smarty->display('user/login.html');
     }

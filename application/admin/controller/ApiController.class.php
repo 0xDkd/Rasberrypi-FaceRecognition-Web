@@ -43,7 +43,8 @@ class apicontroller extends controller
         //TODO:CheckIp
 
         $input_str = file_get_contents("php://input");
-        if (empty($inputstr)) {
+        //var_dump($input_str);
+        if (empty($input_str)) {
             return $this->rejectget();
         } else {
             $urldecode_str = urldecode($input_str);
@@ -157,9 +158,9 @@ class apicontroller extends controller
         $en = new encrypt();
         $va = $en->encrypt(md5(time()), $GLOBALS['config']['en_key']);
         $arr = array(
-            'user_id'   => '1',
+            'user_id'   => '0',
             'user_pic'  => 'https://xxxxxxxx',
-            'user_name' => 'sunwei',
+            'user_name' => 'Unknow',
             'time'      => time(),
             'token'     => $va,
             'status'    => '1'

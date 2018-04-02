@@ -23,83 +23,94 @@ class UserController extends Controller
 
     public function registerAction()
     {
-        $this->smarty->display('user/login.html');
+        if ($this->isLogin()) {
+            $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
+        } else {
+            $this->smarty->display('user/login.html');
+        }
     }
 
     public function loginAction()
     {
-        $this->smarty->display('user/login.html');
-    }
-
-    public function emailModel()
-    {
-        $this->smarty->display('email/email.html');
-
+        if ($this->isLogin()) {
+            $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
+        } else {
+            $this->smarty->display('user/login.html');
+        }
     }
 
     public function doRegisterAction()
     {
-        //Check Captcha
-        session_start();
-        if (strtolower($_SESSION['code']) == strtolower($_POST['seccode_verify'])) {
-            //check authenticate
-            if ($_POST['authenticate'] != $GLOBALS['config']['authenticate_code']) {
-                $this->showActionInfo('认证秘钥错误！');
-            }
-            //check password is same
-            if ($_POST['password'] != $_POST['password-repeat']) {
-                $this->showActionInfo('两次密码不一致');
-            }
-            //Check Email & Username & Password
-            if ($this->checkUEP()) {
-                //Check the user has already in here
-                $m_user = Factory::M('User');
-                $result = $m_user->checkRepeatUser($_POST['user_name'], $_POST['email']);
-                if (!$result) {
-                    //If repeat
-                    $this->showActionInfo('用户已经存在');
+        if ($this->isLogin()) {
+            $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
+        } else {
+
+
+            //Check Captcha
+            session_start();
+            if (strtolower($_SESSION['code']) == strtolower($_POST['seccode_verify'])) {
+                //check authenticate
+                if ($_POST['authenticate'] != $GLOBALS['config']['authenticate_code']) {
+                    $this->showActionInfo('认证秘钥错误！');
+                }
+                //check password is same
+                if ($_POST['password'] != $_POST['password-repeat']) {
+                    $this->showActionInfo('两次密码不一致');
+                }
+                //Check Email & Username & Password
+                if ($this->checkUEP()) {
+                    //Check the user has already in here
+                    $m_user = Factory::M('User');
+                    $result = $m_user->checkRepeatUser($_POST['user_name'], $_POST['email']);
+                    if (!$result) {
+                        //If repeat
+                        $this->showActionInfo('用户已经存在');
+                    } else {
+                        //Send Active Link
+                        $this->emailConfig($_POST['email'], $_POST['user_name']);
+                    }
                 } else {
-                    //Send Active Link
-                    $this->emailConfig($_POST['email'], $_POST['user_name']);
+                    //
+                    $this->showActionInfo('邮箱，用户名，密码格式不正确');
                 }
             } else {
-                //
-                $this->showActionInfo('邮箱，用户名，密码格式不正确');
+                //Captcha Error
+                $this->showActionInfo('验证码不正确');
             }
-        } else {
-            //Captcha Error
-            $this->showActionInfo('验证码不正确');
         }
     }
 
     public function doLoginAction()
     {
-        session_start();
-        if (strtolower($_SESSION['code']) != strtolower($_POST['seccode_verify'])) {
-            $this->showActionInfo('验证码错误');
-        }
-        $data['name'] = $_POST['user_name'];
-        $data['password'] = md5($_POST['password']);
-        $model = Factory::M('user');
-        //check $_POST data
-        if ($model->loginCheck($data['name'], $data['password'])) {
-            //Check is active or not
-            if ($this->isActive($_POST['user_name'])) {
-                //Check use Remember or not
-                //Remember me
-                //Set cookie to judge user choose keep login time
-                setcookie('uname', $_POST['user_name'], time() + 7 * 24 * 3600);
-                setcookie('keysid', $data['password'], time() + 7 * 24 * 3600);
-                //Store user_name in session
-
-                $_SESSION['user'] = $data['password'];
-                $this->showActionInfo('登录成功','3s后将会自动跳转到后台','/','进入后台');
-
-            } else {
-                $this->showActionInfo('没有激活','请先激活你对账户，然后再进行登录');
-            }
+        if ($this->isLogin()) {
+            $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
         } else {
-            $this->showActionInfo('登录失败','用户名不存在或者用户名与密码不匹配<br>请重试');
+            if (strtolower($_SESSION['code']) != strtolower($_POST['seccode_verify'])) {
+                $this->showActionInfo('验证码错误');
+            }
+            $data['name'] = $_POST['user_name'];
+            $data['password'] = md5($_POST['password']);
+            $model = Factory::M('user');
+            //check $_POST data
+            if ($model->loginCheck($data['name'], $data['password'])) {
+                //Check is active or not
+                if ($this->isActive($_POST['user_name'])) {
+                    //Check use Remember or not
+                    //Remember me
+                    //Set cookie to judge user choose keep login time
+                    setcookie('uname', $_POST['user_name'], time() + 7 * 24 * 3600);
+                    setcookie('keysid', $data['password'], time() + 7 * 24 * 3600);
+                    //Store user_name in session
+
+                    $_SESSION['user'] = $data['password'];
+                    $this->showActionInfo('登录成功', '3s后将会自动跳转到后台', '/?m=admin', '进入后台');
+
+                } else {
+                    $this->showActionInfo('没有激活', '请先激活你对账户，然后再进行登录');
+                }
+            } else {
+                $this->showActionInfo('登录失败', '用户名不存在或者用户名与密码不匹配<br>请重试');
+            }
         }
 
     }
@@ -108,13 +119,13 @@ class UserController extends Controller
     {
         $this->isLogin();
         if (empty($_SESSION['user'])) {
-            $this->showActionInfo(null,null,nulll,null,0);
+            $this->showActionInfo(null, null, nulll, null, 0);
             die;
         }
         unset($_SESSION['user']);
         setcookie('uname', '', time() - 1);
         setcookie('keysid', '', time() - 1);
-        $this->showActionInfo('退出成功','希望下次再来哟～','/','返回首页','2000');
+        $this->showActionInfo('退出成功', '希望下次再来哟～', '/', '返回首页', '2000');
     }
 
     public function makeCaptchaAction()
@@ -125,7 +136,7 @@ class UserController extends Controller
         $captcha->makeImage();
     }
 
-    public function emailConfig()
+    private function emailConfig()
     {
         $email = new EmailTemples();
         //Insert into MySQL
@@ -140,9 +151,9 @@ class UserController extends Controller
         $model->insert($data);
 
         //Send Email
-        $email->activeEmail($_POST['email'],$_POST['user_name']);
+        $email->activeEmail($_POST['email'], $_POST['user_name']);
 
-        $this->showActionInfo('注册邮件已发送～','请仔细检查您对邮箱哟～','/','< 返回首页');
+        $this->showActionInfo('注册邮件已发送～', '请仔细检查您对邮箱哟～', '/', '< 返回首页');
     }
 
     private function checkUEP()
@@ -164,17 +175,17 @@ class UserController extends Controller
         $de = new Encrypt();
         $code = substr($_GET['code'], 32);
         $validityPeriod = time() - $de->decrypt($code, $GLOBALS['config']['en_key']);
-        if ($this->isCode($_GET['code'],$_GET['user']) ) {
+        if ($this->isCode($_GET['code'], $_GET['user'])) {
             if ($validityPeriod > 24 * 3600) {
                 $this->showActionInfo('激活码过期');
             } elseif ($this->isActive($_GET['user'])) {
-                $this->showActionInfo('您已激活','您可以直接登录啦～','/?c=user&a=loginAction','<< 去登录');
+                $this->showActionInfo('您已激活', '您可以直接登录啦～', '/?c=user&a=loginAction', '<< 去登录');
             } else {
                 $this->doActive($_GET['user']);
-                $this->showActionInfo('激活成功！','请在这里开始一段新的 旅程吧～','/?c=user&a=loginAction','<< 去登录');
+                $this->showActionInfo('激活成功！', '请在这里开始一段新的 旅程吧～', '/?c=user&a=loginAction', '<< 去登录');
             }
         } else {
-            $this->showActionInfo('激活失败','您对激活链接不正确，请重试');
+            $this->showActionInfo('激活失败', '您对激活链接不正确，请重试');
         }
     }
 
@@ -193,10 +204,10 @@ class UserController extends Controller
         $model->makeActive($user_name);
     }
 
-    public function isCode($code,$user)
+    private function isCode($code, $user)
     {
         $model = Factory::M('user');
-        return $model->checkCode($code,$user);
+        return $model->checkCode($code, $user);
     }
 
 }

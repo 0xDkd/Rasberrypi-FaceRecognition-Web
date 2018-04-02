@@ -24,4 +24,28 @@ class RegisterUserModel extends Model
             return true;
         }
     }
+
+    public function getNum()
+    {
+        //认证人数
+        $sql = "SELECT count(rg.user_id) AS user_num FROM face_register_user AS rg";
+        $num[] = $this->dao->fetchRow($sql);
+        //扫描次数
+        $sql = "SELECT COUNT(s.scan_id) AS scan_num FROM face_scan AS s";
+        $num[] = $this->dao->fetchRow($sql);
+        //成功扫描次数
+        $sql = "SELECT COUNT(s.scan_id) AS scan_right_num FROM face_scan AS s WHERE `user_id` !=0";
+        $num[] = $this->dao->fetchRow($sql);
+        //非法扫描次数，减去即可
+        $re_num =array(
+            'user_num' =>$num[0]['user_num'],
+            'scan_num' =>$num[1]['scan_num'],
+            'scan_right_num' => $num[2]['scan_right_num'],
+            'scan_ban_num' => $num[1]['scan_num']-$num[2]['scan_right_num']
+        );
+        return $re_num;
+        //$num[] = "SELECT COUNT(s.scan_id) AS scan_right_num FROM face_scan AS s WHERE `user_id` =0";
+    }
+
+
 }

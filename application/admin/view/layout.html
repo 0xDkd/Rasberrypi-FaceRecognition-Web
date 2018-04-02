@@ -1,58 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-cn" data-ng-app="FileManagerApp">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>人脸识别控制台</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#4e64d9"/>
+    <title>后台主页</title>
+    <script src="<{STATIC_PATH}>/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/material.css"/>
+    <script src="<{STATIC_PATH}>/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/font-awesome.min.css">
+    <link href="<{STATIC_PATH}>/css/angular-filemanager.min.css" rel="stylesheet">
+    <link href="<{STATIC_PATH}>/css/toastr.min.css" rel="stylesheet">
+    <script type="text/javascript" src="<{STATIC_PATH}>/js/toastr.min.js"></script>
+    <script type="text/javascript">
+    </script>
 
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<{PUBLIC_PATH}>/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="<{PUBLIC_PATH}>/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/setting.css"/>
+    <style type="text/css">
+        .col-md-3 {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .divcss5-left {
+            float: left;
+        }
+    </style>
 </head>
 <body>
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
+<div id="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
 
-        <ul id="nav-mobile" class="side-nav">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
-<{block name="content"}><{/block}>
+                </a>
 
-<footer class="page-footer orange">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">关于</h5>
-                <p class="grey-text text-lighten-4">一群热爱学习，思考，动手，创造的大学生，相信知识就是力量，可以改变未来，我们的征途是汪洋大海！</p>
-
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
             </div>
-            <div class="col l3 s12">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
 
-            </div>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle avatar-a" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false"><img src="<{STATIC_PATH}>/img/default.png" alt="" class="img-circle avatar-s" > user_id<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Profile/user_id">查看注册</a></li>
+                            <li><a href="/Member/Setting">设置</a></li>
 
+                            <li><a href="/Admin">管理面板</a></li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/?m=home&c=user&a=doLogout">退出登录</a></li>
+                        <!--</ul>
+                    </li>
+                    <li class="mobile-addition">
+                        <a href="/Share/My" role="button" aria-haspopup="true"><i class="fa fa-share-alt"
+                                                                                  aria-hidden="true"></i> 我的分享</a>
+                    </li>
+                    <li class="mobile-addition">
+                        <a href="/Explore/Search" role="button" aria-haspopup="true"><i class="fa fa-search"
+                                                                                        aria-hidden="true"></i> 搜索分享</a>
+                    </li>
+                    <li class="mobile-addition">
+                        <a href="/Home/Album" role="button" aria-haspopup="true"><i class="fa fa-picture-o"
+                                                                                    aria-hidden="true"></i> 图片集</a>
+                    </li>
+                </ul>-->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="col-md-2 s" id="side">
+        <div class="list-group" id="b">
+            <a href="/?m=admin&c=index&a=indexAction" class="list-group-item">
+                <i class="fa fa-file" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 信息汇总
+            </a>
+            <a href="/Share/My" class="list-group-item"> <i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                注册用户
+            </a>
+            <a href="/Explore/Search" class="list-group-item">
+                <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 非法扫描
+            </a>
+            <a href="/Home/Album" class="list-group-item">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 设置
+            </a>
         </div>
     </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Create by <a class="orange-text text-lighten-3" href="https://github.com/aimerforreimu">新日暮里哲学队</a>
-        </div>
-    </div>
-</footer>
-
-
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="<{PUBLIC_PATH}>/js/materialize.js"></script>
-<script src="<{PUBLIC_PATH}>/js/init.js"></script>
-
+    <{block name="content"}><{/block}>
+</div>
 </body>
+<script src="<{STATIC_PATH}>/js/material.js"></script>
 </html>

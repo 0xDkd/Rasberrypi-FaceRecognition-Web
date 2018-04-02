@@ -52,13 +52,15 @@ class Controller
         if (isset($_SESSION['user'])) {
             //Remember me
             if (isset($_COOKIE['uname'])) {
-                $m_user = Factory::M('user');
+                $m_user = Factory::M('home\model\user');
                 $result = $m_user->loginCheck($_COOKIE['uname'], $_COOKIE['keysid']);
                 //If user update his password
                 if (!$result) {
-                    $this->showActionInfo('信息过期', '请重新登录，3s后会自动跳转到登录页面', '/?m=home&c=user&a=loginAction', '登录', 3000);
+                    return false;
+                    //$this->showActionInfo('信息过期', '请重新登录，3s后会自动跳转到登录页面', '/?m=home&c=user&a=loginAction', '登录', 3000);
                 } else {
                     $_SESSION['user'] = $_COOKIE['uname'];
+                    return true;
                 }
             }
         }

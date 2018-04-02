@@ -41,6 +41,14 @@ return array(
     //分页限制
     'page_limit'         => 5,
 
-
+    //SMTP配置
+    'smtp'               => true,
+    'email_host'         => 'smtpdm.aliyun.com',
+    'email_safe'         => 'ssl',
+    'Port'               => 465,
+    'sender'             => 'no-reply@acgbuster.com',
+    'E_nickname'         => '测试',
+    'account'            => 'no-reply@acgbuster.com',
+    'token'              => 'SUNacgLIUbuster123',
 );
 
