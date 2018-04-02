@@ -6,17 +6,17 @@ We Use json to make data
 
 ## 中文说明
 
-##php部分
+## php部分
 
 
-###数据交互
+### 数据交互
 
 使用json进行数据的交互，默认的格式如下：
 ```JSON
 {
 	"user_id": "1",
 	"user_pic": "https:\/\/xxxxxxxx",
-	"user_name": "SunWei",
+	"user_name": "XiaoMing",
 	"time": 1522575525,
 	"token": "lJadmm7Gm8jIa8iYmmZqmcNol5ybYm+Zl2dtmmeXl5o=",
 	"status": "1"
