@@ -99,28 +99,27 @@
 
             <div class="card_botom">
                 <div class="row bottom-width">
-                    <form id="loginForm">
+                    <form id="loginForm" action="/?c=user&a=doLoginAction" method="post">
                         <div class="form-group  label-floating">
-                            <label class="control-label" for="inputEmail">Email 电子邮箱</label>
-                            <input type="text" class="form-control" id="inputEmail" name="userMail">
+                            <label class="control-label" for="inputUserName">用户名</label>
+                            <input type="text" class="form-control" id="inputUserName" name="user_name">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputPwd">密码</label>
-                            <input type="password" class="form-control" id="inputPwd" name="userPass">
+                            <input type="password" class="form-control" id="inputPwd" name="password">
                         </div>
-
-
                         <div class="input-group form-group label-floating">
                             <label class="control-label" for="captcha">验证码</label>
-                            <input type="text" id="captcha" class="form-control" name="captchaCode">
+                            <input type="text" id="captcha" class="form-control" name="seccode_verify">
                             <span class="input-group-btn">
-                                                      <div class="captcha_img">验证码位置</div>
+                                                      <div class="captcha_img"><img
+                                                              src="/?m=home&c=user&a=makeCaptchaAction" alt="验证码"></div>
                                                   </span>
                         </div>
-
-
+                        <div class="input-group form-group label-floating">
+                            <input type="submit" value="登录" class="btn btn-raised btn-primary">
+                        </div>
                     </form>
-                    <button class="btn btn-raised btn-primary" id="loginButton">登录</button>
                     <div class="link-group">
                         <a href="javascript:void" class="noWave" id="create" data-change="true">创建一个账户</a><br>
                         <a href="javascript:void" class="noWave" id="forgetSwitch2" data-change="true">忘记密码？</a>
@@ -128,8 +127,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="jumbotron" id="regForm" style="display: none;">
             <div class="card_top">
                 <div class="row top-color">
@@ -142,32 +139,41 @@
 
             <div class="card_botom">
                 <div class="row bottom-width">
-                    <form id="registerForm">
+                    <form id="registerForm" method="post" action="/?m=home&c=user&a=doRegisterAction">
+                        <div class="form-group  label-floating">
+                            <label class="control-label" for="inputUserName">用户名</label>
+                            <input type="text" class="form-control" id="inputUserName" name="user_name">
+                        </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputEmail">Email 电子邮箱</label>
-                            <input type="text" class="form-control" id="inputEmail" name="username-reg">
+                            <input type="text" class="form-control" id="inputEmail" name="email" >
                         </div>
                         <div class="form-group  label-floating">
-                            <label class="control-label" for="inputPwd">密码</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password-reg">
+                            <label class="control-label" for="inputPwd">密码 : 最少6位，必须含有数字和字母</label>
+                            <input type="password" class="form-control" id="inputPwd" name="password" >
                         </div>
                         <div class="form-group  label-floating">
-                            <label class="control-label" for="inputPwd">重复密码</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password-check">
+                            <label class="control-label" for="inputPwd">重复密码 : 最少6位，必须含有数字和字母</label>
+                            <input type="password" class="form-control" id="inputPwd" name="password-repeat" >
                         </div>
-
-
                         <div class="input-group form-group label-floating">
                             <label class="control-label" for="captcha">验证码</label>
-                            <input type="text" id="captcha" class="form-control" name="captchaCode">
+                            <input type="text" id="captcha" class="form-control" name="seccode_verify" >
                             <span class="input-group-btn">
-                                                      <div class="captcha_img">验证码地址</div>
-                                                  </span>
+                                <div class="captcha_img"><img src="/?m=home&c=user&a=makeCaptchaAction" alt=""></div>
+                            </span>
+                        </div>
+                        <div class="input-group form-group label-floating">
+                            <label class="control-label" for="inputPwd">认证秘钥</label>
+                            <input type="password" class="form-control" id="inputPwd" name="authenticate" >
                         </div>
 
+                        <div class="input-group form-group label-floating">
+                            <input type="submit" value="注册" class="btn btn-raised btn-primary" id="regButton">
+                        </div>
 
                     </form>
-                    <button class="btn btn-raised btn-primary" id="regButton">注册</button>
+
                     <div class="link-group">
                         <a href="javascript:void" class="noWave" id="loginSwitch3" data-change="true">已有账号？立即登录</a><br>
                         <a href="javascript:void" class="noWave" id="forgetSwitch" data-change="true">忘记密码？</a>

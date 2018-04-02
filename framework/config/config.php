@@ -7,8 +7,7 @@
  */
 return array(
     //!!!DEBUG!!! Please check it
-    'debug'              => false
-,
+    'debug'              => false,
     'web_const'          => true,
     //基础配置项
     'email'              => 'smtp',
@@ -17,6 +16,8 @@ return array(
     'web_logo'           => '',
     //网站默认加密key
     'en_key'             => 'laksdjfowqer23jsdfasnaswe',
+    //认证秘钥
+    'authenticate_code'  => '123',
 
     //数据库配置选项
     'host'               => 'localhost',
@@ -40,14 +41,6 @@ return array(
     //分页限制
     'page_limit'         => 5,
 
-    //SMTP配置
-    'smtp'               => true,
-    'email_host'         => 'smtpdm.aliyun.com',
-    'email_safe'         => 'ssl',
-    'Port'               => 465,
-    'sender'             => '',
-    'E_nickname'         => '',
-    'account'            => '',
-    'token'              => '',
+
 );
 

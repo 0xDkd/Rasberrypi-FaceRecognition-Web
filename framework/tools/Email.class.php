@@ -42,8 +42,6 @@ class Email
         $mail->AddAddress($getter);
         //do sent
         $result = $mail->Send();
-        var_dump($result);
-        var_dump($mail->ErrorInfo);
         if ($result) {
             return true;
         } else {

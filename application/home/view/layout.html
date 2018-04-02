@@ -16,10 +16,13 @@
 <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
+            <{if !isset($smarty.session.user)}>
             <li><a href="?a=loginAction">登录</a></li>
             <li><a href="?a=loginAction">注册</a></li>
+            <{else}>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><img src="<{STATIC_PATH}>/img/default.png" alt="" class="circle responsive-img" width="60"></a><
             </li>
+            <{/if}>
         </ul>
         <!--<ul id="nav-mobile" class="side-nav">
             <li><a href="#">Navbar Link</a></li>
@@ -28,12 +31,14 @@
     </div>
 </nav>
 <!-- Dropdown Structure -->
+<{if isset($smarty.session.user)}>
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">设置</a></li>
     <li><a href="#!">控制面板</a></li>
     <li class="divider"></li>
-    <li><a href="#!">退出登录</a></li>
+    <li><a href="/?m=home&c=user&a=doLogout">退出登录</a></li>
 </ul>
+<{/if}>
 <{block name="content"}><{/block}>
 
 <footer class="page-footer orange">

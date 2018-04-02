@@ -6,9 +6,9 @@
     <title>信息页面</title>
     <!-- third party -->
     <script src="<{STATIC_PATH}>/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="<{STATIC_PATH}>/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<{STATIC_PATH}>/css/material.css" />
-    <link rel="stylesheet" href="<{STATIC_PATH}>/css/animate.css" />
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/material.css"/>
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/animate.css"/>
     <script src="<{STATIC_PATH}>/js/material.js"></script>
     <script src="<{STATIC_PATH}>/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
     <link href="<{STATIC_PATH}>/css/toastr.min.css" rel="stylesheet">
     <script type="text/javascript" src="<{STATIC_PATH}>/js/toastr.min.js"></script>
     <!-- /Comment if you need to use raw source code -->
-    <link rel="stylesheet" href="<{STATIC_PATH}>/css/error.css" />
+    <link rel="stylesheet" href="<{STATIC_PATH}>/css/error.css"/>
 </head>
 <body data-ma-header="teal">
 
@@ -26,12 +26,16 @@
         <br>
         <img src="<{STATIC_PATH}>/img/logo_s.png" style="width:192px;">
     </header>
-    <div class="error_content" >
+    <div class="error_content">
         <div class="jumbotron animated bounce" style="padding-left:30px;">
-            <h1><{$info_title}></h1>
+            <h1><{$title}></h1>
             <br>
             <p><{$msg}></p>
+            <{if $url==null }>
             <p><a class="btn btn-primary btn-lg" onclick="history.go(-1);"><< 返回</a></p>
+            <{else}>
+            <p><a class="btn btn-primary btn-lg" href="<{$url}>"><{$b_title}></a></p>
+            <{/if}>
         </div>
     </div>
 </div>

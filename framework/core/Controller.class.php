@@ -49,15 +49,15 @@ class Controller
     {
         session_start();
         //If user
-        if (isset($_SESSION['user'])){
+        if (isset($_SESSION['user'])) {
             //Remember me
-            if (isset($_COOKIE['uname'])){
+            if (isset($_COOKIE['uname'])) {
                 $m_user = Factory::M('user');
-                $result = $m_user->loginCheck($_COOKIE['uname'],$_COOKIE['keysid']);
+                $result = $m_user->loginCheck($_COOKIE['uname'], $_COOKIE['keysid']);
                 //If user update his password
-                if (!$result){
-                    $this->jump('/?m=home&c=user&a=loginAction','信息过期，请重新登录');
-                }else{
+                if (!$result) {
+                    $this->showActionInfo('信息过期', '请重新登录，3s后会自动跳转到登录页面', '/?m=home&c=user&a=loginAction', '登录', 3000);
+                } else {
                     $_SESSION['user'] = $_COOKIE['uname'];
                 }
             }
@@ -81,10 +81,25 @@ class Controller
         die;
     }
 
+    public function showActionInfo($title = null, $msg = null, $url = null, $b_title = null, $delay = 1000000)
+    {
+        $this->smarty->assign('url', $url);
+        $this->smarty->assign('title', $title);
+        $this->smarty->assign('msg', $msg);
+        $this->smarty->assign('b_title', $b_title);
+        if (!$GLOBALS['config']['debug']) {
+            $this->smarty->display('msg.html');
+            echo "<script language='javascript' type='text/javascript'>";
+            echo "window.setTimeout(\"go()\",$delay);function go(){window.location.href='$url'}";
+            echo "</script>";
+        }
+        die;
+    }
+
     public function getGravatarAvatar($mail)
     {
-           $url = " https://cdn.v2ex.com/gravatar/".md5($mail)."png";
-           return $mail;
+        $url = " https://cdn.v2ex.com/gravatar/" . md5($mail) . "png";
+        return $mail;
     }
 
 

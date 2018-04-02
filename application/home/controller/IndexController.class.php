@@ -12,6 +12,7 @@ class IndexController extends Controller
 {
     public function indexAction()
     {
+        $this->isLogin();
         $this->smarty->display('index.html');
     }
 
