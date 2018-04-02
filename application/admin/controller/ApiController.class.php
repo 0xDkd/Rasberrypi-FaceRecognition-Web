@@ -9,121 +9,157 @@
 namespace admin\controller;
 
 
-use framework\core\Controller;
-use framework\core\Factory;
-use framework\tools\Encrypt;
-use framework\tools\HttpRequest;
+use framework\core\controller;
+use framework\core\factory;
+use framework\tools\encrypt;
+use framework\tools\httprequest;
+use framework\tools\Upload;
 
-class ApiController extends Controller
+class apicontroller extends controller
 {
 
-    private $statusCode = array(
-        '401' => 'Token Miss',
-        '402' => 'Time Out',
-        '403' => 'Forbidden',
-        '404' => 'Not Fund',
-        '405' => 'Authentication failed',
-        '406' => 'The parameters are indeed',
-        '101' => 'Method is illegal',
-        '200' => 'Success',
-        '201' => 'Success But not user',
+    private $statuscode = array(
+        '401' => 'token miss',
+        '402' => 'time out',
+        '403' => 'forbidden',
+        '404' => 'not fund',
+        '405' => 'authentication failed',
+        '406' => 'the parameters are indeed',
+        '101' => 'method is illegal',
+        '200' => 'success',
+        '201' => 'success but not user',
+    );
+    //Forbidden List
+    private $forbiddenList = array(
+        //Please write ip
     );
 
+
+    /**
+     * Get post data
+     */
     public function getData()
     {
-        $inputstr = file_get_contents("php://input");
+        //TODO:CheckIp
+
+        $input_str = file_get_contents("php://input");
         if (empty($inputstr)) {
-            //return $this->rejectGet();
-            var_dump($this->rejectGet());
+            return $this->rejectget();
         } else {
-            $urldecodestr = urldecode($inputstr);
-            $data = json_decode($urldecodestr,true);;
-            var_dump($data);
-            $en = new Encrypt();
+            $urldecode_str = urldecode($input_str);
+            $data = json_decode($urldecode_str,true);;
+            $en = new encrypt();
             $va = $en->encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
-            //Token failed
+            //token failed
             if ($va != $data['token']) {
-                //return $this->statusCode['405'];
-                var_dump($this->statusCode['405']);
-                return;
+                $this->showinfo('405');
         }
-            //Check keys
+            //check keys
             $keys = array_keys($data);
-            //30s Must upload data
+            //30s must upload data
             $keys_must = array('user_id', 'user_pic', 'user_name', 'time', 'token', 'status');
             $pa = true;
             foreach ($keys as $key) {
                 if (!in_array($key, $keys_must)) {
-                    return $this->jstatusCode['406'];
+                    $this->showinfo('406');
                 }
             }
-            $this->doInsertData($data);
+            //Check time
+            $this->checkTime($data);
+            //Check
+            //Insert Data
+            $this->doinsertdata($data);
 
         }
     }
 
-    private function rejectGet()
+    /**
+     * Reject Get Method
+     */
+    private function rejectget()
     {
-        return $this->statusCode['101'];
+       $this->showinfo('101');
     }
 
-    public function returnData()
+    /**
+     * Insert into Mysql .
+     * @param $data
+     */
+    private function doinsertdata($data)
     {
-
-    }
-
-    private function doInsertData($data)
-    {
-        $s_model = Factory::M('scan');
-        //Unknow User
+        $s_model = factory::m('scan');
+        //unknow user
         if ($data['user_id'] == 0) {
             $s_data['status'] = 0;
             $s_data['scan_time'] = $data['time'];
             $s_data['scan_pic'] = $data['user_pic'];
             $s_data['user_id'] = 0;
-            //Insert
+            //insert
             $s_model->insert($s_data);
-            //Status Code
-            return $this->statusCode['201'];
+            //status code
+            $this->showinfo('201');
         }
-        //True User
-        //Check User is exist or not
-        $u_model = Factory::M('RegisterUser');
-        $is_ex = $u_model->checkUser($data['user_id']);
+        //true user
+        //check user is exist or not
+        $u_model = factory::m('registeruser');
+        $is_ex = $u_model->checkuser($data['user_id']);
         $s_data['status'] = $data['status'];
         $s_data['scan_time'] = $data['time'];
         $s_data['scan_pic'] = $data['user_pic'];
         $s_data['user_id'] = $data['user_id'];
-
-        //If exist
+        //if exist
         if ($is_ex) {
-            //Insert
+            //insert
             $s_model->insert($s_data);
         } else {
-            $s_model = Factory::M('scan');
+            $s_model = factory::m('scan');
             $u_data['user_name'] = $data['user_name'];
             $u_data['user_id'] = $data['user_id'];
-            //Insert
+            //insert
             $s_model->insert($s_data);
             $u_model->insert($u_data);
         }
-        return $this->statusCode['200'];
+        //Success
+        $this->showinfo('200');
 
     }
+    //TODO:FILES
 
-    private function getPicture()
+    /**
+     * upload file method ,but this method is very dangerous
+     */
+    public  function getPicture()
     {
-
+        $upload = new Upload();
+        $upload->upload_path = UPLOADS_PATH;
+        $upload->maxsize = 1000*1024;
+        $upload->prefix = 'face';
+        $input_str = file_get_contents("php://input");
+        $path = $upload->doBinaryUpload($input_str);
     }
 
-    public function makeJson()
+    /**
+     * Check Time , 1min is the last time
+     * @param $data
+     */
+    private function checkTime($data)
     {
-        $en = new Encrypt();
+        if (time()-$data['time'] > 60){
+            $this->showinfo('402');
+        }
+    }
+
+    /**
+     * Test get Json ,Do not use in real web
+     */
+    public function makejson()
+    {
+        $en = new encrypt();
         $va = $en->encrypt(md5(time()), $GLOBALS['config']['en_key']);
         $arr = array(
             'user_id'   => '1',
             'user_pic'  => 'https://xxxxxxxx',
-            'user_name' => 'SunWei',
+            'user_name' => 'sunwei',
             'time'      => time(),
             'token'     => $va,
             'status'    => '1'
@@ -134,21 +170,36 @@ class ApiController extends Controller
         $keys = ['user_id', 'user_pic', 'user_name', 'time', 'token', 'status1'];
         $keys_must = array('user_id', 'user_pic', 'user_name', 'time', 'token', 'status');
         $pa = true;
-        /*foreach ($keys as $key) {
-            if (!in_array($key, $keys_must)) {
-                var_dump($this->statusCode['406']);
-                return $this->statusCode['406'];
-            }
-        }*/
-        $curl = new HttpRequest();
-        $curl->url = 'http://face.test/?m=admin&c=api&a=getData';
+        $curl = new httprequest();
+        $curl->url = 'http://face.test/?m=admin&c=api&a=getdata';
         $result = $curl->send($js);
         var_dump($result);
     }
 
-    private function showInfo()
+    /**
+     * @desc
+     * @param string $code StatusCdoe
+     */
+    private function showInfo($code)
     {
-        
+        die($code.'<br>'.$this->statuscode[$code]);
+    }
+
+    /**
+     * Get Post Ip
+     * @return string
+     */
+    private  function GetIP()
+    {
+        if(!empty($_SERVER["HTTP_CLIENT_IP"]))
+            $cip = $_SERVER["HTTP_CLIENT_IP"];
+        else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))
+            $cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+        else if(!empty($_SERVER["REMOTE_ADDR"]))
+            $cip = $_SERVER["REMOTE_ADDR"];
+        else
+            $cip = "Can not get post ip";
+        return $cip;
     }
 
 }

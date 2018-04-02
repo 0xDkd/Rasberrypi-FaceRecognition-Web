@@ -7,7 +7,8 @@
  */
 return array(
     //!!!DEBUG!!! Please check it
-    'debug'              => true,
+    'debug'              => false
+,
     'web_const'          => true,
     //基础配置项
     'email'              => 'smtp',

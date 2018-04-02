@@ -1,20 +1,8 @@
 # Rasberrypi-FaceRecognition-Web
+## English Document
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### php part
+We Use json to make data  
 
 ## 中文说明
 
