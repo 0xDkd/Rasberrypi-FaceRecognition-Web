@@ -39,7 +39,7 @@ class Page
         //定义首页的导航按钮
         $first = 1;
         $first_active = $this->now_page == 1 ? 'active':'';
-        $url = $this->url.'?page=';
+        $url = $this->url.'page=';
         
         $keyword = '';
         if($this->keyword !=''){

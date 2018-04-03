@@ -192,7 +192,7 @@ video {
 }
 
 .card.type--profile .card-heading#card_img_02 {
-    background-image: url(/static/img/profile.jpg)
+    background-image: url(/application/public/static/img/profile.jpg)
 }
 
 .card.type--profile .card-heading.card-background {

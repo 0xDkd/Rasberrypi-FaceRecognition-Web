@@ -44,8 +44,35 @@ class RegisterUserModel extends Model
             'scan_ban_num' => $num[1]['scan_num']-$num[2]['scan_right_num']
         );
         return $re_num;
-        //$num[] = "SELECT COUNT(s.scan_id) AS scan_right_num FROM face_scan AS s WHERE `user_id` =0";
     }
 
+    public function getAllUserInfo($offset,$limit)
+    {
+        $sql = "SELECT ru.*,COUNT(s.user_id) AS scan_num FROM  `face_scan` AS s LEFT JOIN `face_register_user` AS ru ON s.user_id=ru.user_id GROUP BY ru.user_id ORDER BY s.user_id LIMIT $offset,$limit";
+        return $this->dao->fetchAll($sql);
 
+    }
+
+    public function getUserCount()
+    {
+        $data =  $this->find(null,null,true);
+        return $data[0]['total'];
+    }
+
+    public function getUserDetail($user_id)
+    {
+        $sql ="SELECT ru.user_name AS user_name,s.scan_pic AS  pic,s.`scan_time` AS time,s.scan_id,ru.user_id FROM `face_register_user` AS ru LEFT JOIN `face_scan` AS s ON  ru.`user_id`= s.`user_id`  where ru.`user_id`=$user_id ORDER BY time";
+        return $this->dao->fetchAll($sql);
+    }
+
+    public function getUserScanCount($user_id)
+    {
+        $sql ="SELECT COUNT(ru.user_id) AS scan_num FROM `face_register_user` AS ru LEFT JOIN `face_scan` AS s ON  ru.`user_id`= s.`user_id`  where ru.`user_id`=$user_id";
+        return $this->dao->fetchAll($sql);
+    }
+
+/*    public function getUserOtherInfo()
+    {
+        $sql = "SELECT "
+    }*/
 }

@@ -1,0 +1,176 @@
+<{extends file="layout.html"}>
+<{block name="content"}>
+<div class="col-md-10 quota_content">
+    <h1>用户设置</h1>
+    <br>
+    <div class="fix_side">
+        <div class="fix">
+            <div class="col-md-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">基本信息
+                        <div class="ripple-container"></div>
+                    </a></li>
+                    <!--<li class=""><a href="#security" data-toggle="tab" aria-expanded="false">安全设置
+                        <div class="ripple-container"></div>
+                    </a></li>-->
+                    <li class=""><a href="#password" data-toggle="tab" aria-expanded="false">修改密码
+                        <div class="ripple-container"></div>
+                    </a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="home">
+                        <div class="panel panel-default">
+                            <div class="panel-body" id="packs">
+                                <div class="col-md-8">
+                                    <div class="row fix">
+                                        <div class="col-md-3 option_name"><label for="uid">UID：</label></div>
+                                        <div class="col-md-9">
+                                            <div class="non_input">user_id</div>
+                                        </div>
+                                    </div>
+                                    <div class="row fix">
+                                        <div class="col-md-3 option_name"><label for="nick">昵称：</label></div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="nick" value="user_id">
+                                        </div>
+                                    </div>
+
+                                    <div class="row fix">
+                                        <div class="col-md-3 option_name"><label for="email">Email：</label></div>
+                                        <div class="col-md-9">
+                                            <input type="email" class="form-control" id="email" value="user_id"
+                                                   disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row fix">
+                                        <div class="col-md-3 option_name"><label for="inputEmail">注册日期：</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="non_input ">user_id</div>
+                                        </div>
+                                    </div>
+                                    <div class="row fix">
+                                        <div class="col-md-3 option_name"><label for="inputEmail"></label></div>
+                                        <div class="col-md-9">
+                                            <div class="non_input ">
+                                                <button class="btn btn-raised btn-primary" id="saveNick">保存更改
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="avatar">
+                                        <img src="<{$smarty.session.gravatar}>"
+                                             class="img-circle avatar-img"><br>
+                                        <button class="btn btn-primary" data-toggle="modal"
+                                                data-target="#avatar_modal"><i class="fa fa-pencil-square-o"
+                                                                               aria-hidden="true"></i> 修改头像
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="security">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row fix">
+                                    <div class="col-md-3 option_name"><label for="inputEmail">开启注册：</label></div>
+                                    <div class="col-md-9">
+                                        <div>
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" id="homePage" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="password">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row fix">
+                                    <div class="col-md-3 option_name"><label for="inputEmail">原密码：</label></div>
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" id="passOrigin">
+                                    </div>
+                                </div>
+                                <div class="row fix">
+                                    <div class="col-md-3 option_name"><label for="inputEmail">新密码：</label></div>
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" id="passNew">
+                                    </div>
+                                </div>
+                                <div class="row fix">
+                                    <div class="col-md-3 option_name"><label for="inputEmail">确认新密码：</label></div>
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" id="passNewRepet">
+                                    </div>
+                                </div>
+                                <div class="row fix">
+                                    <div class="col-md-3 option_name"><label for="inputEmail"></label></div>
+                                    <div class="col-md-9">
+                                        <div class="non_input ">
+                                            <button class="btn btn-raised btn-primary waves-effect" id="savePwd">
+                                                保存更改
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">公告</div>
+                    <div class="panel-body">
+                        公告内容
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="fix_side">
+        <div class="fix">
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="avatar_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改头像</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row fix">
+                    <div class="col-md-4">
+                        <div class="avatar"><img src="<{$smarty.session.gravatar}>"
+                                                 class="img-circle avatar-img"><br></div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="alert alert-success">
+                            由于时间紧迫此功能作为TODO，放于此处占位，等待开发
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary " data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<link rel="stylesheet" href="<{STATIC_PATH}>/css/setting.css">
+<script src="<{STATIC_PATH}>/js/setting.js"></script>
+<{/block}>
+

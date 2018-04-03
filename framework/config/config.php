@@ -39,7 +39,7 @@ return array(
     'pic_size'           => 2000 * 1024,
     'pic_prefix'         => 'face',
     //分页限制
-    'page_limit'         => 5,
+    'page_limit'         => 15,
 
     //SMTP配置
     'smtp'               => true,

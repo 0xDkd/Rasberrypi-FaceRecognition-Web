@@ -28,7 +28,7 @@ class IndexController extends Controller
 
     public function setAction()
     {
-        $this->smarty->display('user/set.html');
+        $this->smarty->display('user/setting.html');
     }
 
     public function homeAction()

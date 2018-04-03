@@ -53,11 +53,11 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle avatar-a" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><img src="<{STATIC_PATH}>/img/default.png" alt="" class="img-circle avatar-s" > user_id<span
+                           aria-haspopup="true" aria-expanded="false"><img src="<{$smarty.session.gravatar}>" alt="" class="img-circle avatar-s" > <{$smarty.session.user}> <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/Profile/user_id">查看注册</a></li>
-                            <li><a href="/Member/Setting">设置</a></li>
+                            <li><a href="/?m=admin&c=index&a=settingAction">设置</a></li>
 
                             <li><a href="/Admin">管理面板</a></li>
 
@@ -86,7 +86,7 @@
             <a href="/?m=admin&c=index&a=indexAction" class="list-group-item">
                 <i class="fa fa-file" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 信息汇总
             </a>
-            <a href="/Share/My" class="list-group-item"> <i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <a href="/?m=admin&c=user&a=userDashBroad" class="list-group-item"> <i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
                 注册用户
             </a>
             <a href="/Explore/Search" class="list-group-item">

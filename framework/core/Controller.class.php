@@ -98,11 +98,4 @@ class Controller
         die;
     }
 
-    public function getGravatarAvatar($mail)
-    {
-        $url = " https://cdn.v2ex.com/gravatar/" . md5($mail) . "png";
-        return $mail;
-    }
-
-
 }

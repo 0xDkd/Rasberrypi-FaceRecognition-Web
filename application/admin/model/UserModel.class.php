@@ -13,5 +13,12 @@ use framework\core\Model;
 
 class UserModel extends Model
 {
+    protected $logic_table = 'admin';
+    public function getInfo($user)
+    {
+        $where['name'] = $user;
+        $data = $this->find(null,$where);
+        return $data;
+    }
 
 }

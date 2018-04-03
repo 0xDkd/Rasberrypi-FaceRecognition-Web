@@ -30,8 +30,7 @@ class apicontroller extends controller
         '201' => 'success but not user',
     );
     //Forbidden List
-    private $forbiddenList = array(
-        //Please write ip
+    private $forbiddenList = array(//Please write ip
     );
 
 
@@ -48,13 +47,13 @@ class apicontroller extends controller
             return $this->rejectget();
         } else {
             $urldecode_str = urldecode($input_str);
-            $data = json_decode($urldecode_str,true);;
+            $data = json_decode($urldecode_str, true);;
             $en = new encrypt();
             $va = $en->encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
             //token failed
             if ($va != $data['token']) {
                 $this->showinfo('405');
-        }
+            }
             //check keys
             $keys = array_keys($data);
             //30s must upload data
@@ -79,7 +78,7 @@ class apicontroller extends controller
      */
     private function rejectget()
     {
-       $this->showinfo('101');
+        $this->showinfo('101');
     }
 
     /**
@@ -88,7 +87,7 @@ class apicontroller extends controller
      */
     private function doinsertdata($data)
     {
-        $s_model = factory::m('scan');
+        $s_model = factory::M('scan');
         //unknow user
         if ($data['user_id'] == 0) {
             $s_data['status'] = 0;
@@ -102,7 +101,7 @@ class apicontroller extends controller
         }
         //true user
         //check user is exist or not
-        $u_model = factory::m('registeruser');
+        $u_model = factory::M('registeruser');
         $is_ex = $u_model->checkuser($data['user_id']);
         $s_data['status'] = $data['status'];
         $s_data['scan_time'] = $data['time'];
@@ -113,12 +112,13 @@ class apicontroller extends controller
             //insert
             $s_model->insert($s_data);
         } else {
-            $s_model = factory::m('scan');
+            $s_model = factory::M('scan');
             $u_data['user_name'] = $data['user_name'];
             $u_data['user_id'] = $data['user_id'];
             //insert
             $s_model->insert($s_data);
             $u_model->insert($u_data);
+
         }
         //Success
         $this->showinfo('200');
@@ -129,11 +129,11 @@ class apicontroller extends controller
     /**
      * upload file method ,but this method is very dangerous
      */
-    public  function getPicture()
+    public function getPicture()
     {
         $upload = new Upload();
         $upload->upload_path = UPLOADS_PATH;
-        $upload->maxsize = 1000*1024;
+        $upload->maxsize = 1000 * 1024;
         $upload->prefix = 'face';
         $input_str = file_get_contents("php://input");
         $path = $upload->doBinaryUpload($input_str);
@@ -145,7 +145,7 @@ class apicontroller extends controller
      */
     private function checkTime($data)
     {
-        if (time()-$data['time'] > 60){
+        if (time() - $data['time'] > 60) {
             $this->showinfo('402');
         }
     }
@@ -158,9 +158,9 @@ class apicontroller extends controller
         $en = new encrypt();
         $va = $en->encrypt(md5(time()), $GLOBALS['config']['en_key']);
         $arr = array(
-            'user_id'   => '0',
+            'user_id'   => mt_rand(1,100),
             'user_pic'  => 'https://xxxxxxxx',
-            'user_name' => 'Unknow',
+            'user_name' => uniqid('user_',true),
             'time'      => time(),
             'token'     => $va,
             'status'    => '1'
@@ -183,20 +183,20 @@ class apicontroller extends controller
      */
     private function showInfo($code)
     {
-        die($code.'<br>'.$this->statuscode[$code]);
+        die($code . '<br>' . $this->statuscode[$code]);
     }
 
     /**
      * Get Post Ip
      * @return string
      */
-    private  function GetIP()
+    private function GetIP()
     {
-        if(!empty($_SERVER["HTTP_CLIENT_IP"]))
+        if (!empty($_SERVER["HTTP_CLIENT_IP"]))
             $cip = $_SERVER["HTTP_CLIENT_IP"];
-        else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))
+        else if (!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))
             $cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-        else if(!empty($_SERVER["REMOTE_ADDR"]))
+        else if (!empty($_SERVER["REMOTE_ADDR"]))
             $cip = $_SERVER["REMOTE_ADDR"];
         else
             $cip = "Can not get post ip";
