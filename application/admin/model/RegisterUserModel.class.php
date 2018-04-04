@@ -48,7 +48,7 @@ class RegisterUserModel extends Model
 
     public function getAllUserInfo($offset,$limit)
     {
-        $sql = "SELECT ru.*,COUNT(s.user_id) AS scan_num FROM  `face_scan` AS s LEFT JOIN `face_register_user` AS ru ON s.user_id=ru.user_id GROUP BY ru.user_id ORDER BY s.user_id LIMIT $offset,$limit";
+        $sql = "SELECT ru.*,COUNT(s.user_id) AS scan_num FROM  `face_scan` AS s LEFT JOIN `face_register_user` AS ru ON s.user_id=ru.user_id WHERE s.user_id!=0 GROUP BY ru.user_id ORDER BY s.user_id LIMIT $offset,$limit";
         return $this->dao->fetchAll($sql);
 
     }

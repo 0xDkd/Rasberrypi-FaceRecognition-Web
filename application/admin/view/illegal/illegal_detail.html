@@ -3,7 +3,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <meta name="theme-color" content="#4e64d9"/>
-    <title>认证用户主页</title>
+    <title>非法识别</title>
     <!-- third party -->
     <script src="<{STATIC_PATH}>/js/jquery.min.js"></script>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/bootstrap.min.css" />
@@ -48,7 +48,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/?m=admin">仪表盘</a></li>
                             <li><a href="/?m=admin&c=user&a=userDashBroad">认证情况</a></li>
-                            <li><a href="/?m=admin&c=admin&a=setting">设置</a></li>
+                            <li><a href="/?m=admin&c=user&a=setting">设置</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/?m=home&c=user&a=doLogout">退出登录</a></li>
                         </ul>
@@ -66,46 +66,7 @@
     </div>
 </div>
 <div class="container main-h">
-    <div class="col-md-3">
-        <div class="card type--profile">
-            <header class="card-heading card-background" id="card_img_02">
-                <img src="<{STATIC_PATH}>/img/default.png" alt="" class="img-circle" width="120" height="120">
-                <ul class="card-actions icons  right-top">
-                    <li class="dropdown" style="display: none;">
-                        <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
-                            <i class="zmdi zmdi-more-vert text-white"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <a href="javascript:void(0)">Option One</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Option Two</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Option Three</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </header>
-            <div class="card-body">
-                <h3 class="name"><{$user[0]['user_name']}></h3>
-                <span class="title span-fix"><span class="label span-fix label-danger">认证用户</span></span>
-
-            </div>
-            <footer class="card-footer border-top">
-                <div class="row row p-t-10 p-b-10">
-                    <div class="col-xs-4 col-xs-pull-0"><span class="count"><{$user[0]['time']|date_format:'%Y/%m/%d'}></span><span>注册时间</span></div>
-                    <div class="col-xs-4"><span class="count"><{$scan_num}></span><span>识别次数</span></div>
-
-                    <div class="col-xs-4"><span class="count"><{$user[0]['user_id']}></span><span>用户编号</span></div>
-
-                </div>
-            </footer>
-        </div>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
         <div class="jumbotron">
             <div class="card_botom">
                 <div class="row bottom-width">
@@ -121,7 +82,7 @@
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th width="50%">识别图片</th>
+                                                <th width="50%">抓拍图片(点击查看大图)</th>
                                                 <th class="cent">识别日期</th>
                                                 <th class="cent">识别结果</th>
                                                 <th class="cent">操作</th>
@@ -129,16 +90,14 @@
 
                                             </thead>
                                             <tbody>
-                                            <{foreach $user as $u}>
                                             <tr>
                                                 <td >
                                                    <i class="fa fa-bullseye" aria-hidden="true"></i>
-                                                    <a href="<{$u['pic']}>" class="fname" target="_blank">图片(点击查看)</a></td>
-                                                <td class="cent"><{$u['time']|date_format:'%Y-%m-%d %H:%M:%S'}></td>
-                                                <td align="center"><span class="label span-fix label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span></td>
-                                                <td align="center"> <a href="?m=admin&c=scan&a=showDelete&scan_id=<{$u['scan_id']}>&u_id=<{$u['user_id']}>" class="btn btn-danger btn-raised" target="_blank">删除 <i class="fa fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
+                                                    <a href="<{$detail['scan_pic']}>" class="fname" target="_blank"><img src="<{STATIC_PATH}>/img/default.png" class="img-circle"></a></td>
+                                                <td class="cent"><{$detail['scan_time']|date_format:'%Y-%m-%d %H:%M:%S'}></td>
+                                                <td align="center"><span class="label label-danger" style="margin-top: 10px"><i class="fa fa-close" aria-hidden="true"></i></span></td>
+                                                <td align="center"> <a href="?m=admin&c=scan&a=showDelete&scan_id=<{$detail['scan_id']}>" class="btn btn-danger btn-raised" target="_blank">删除 <i class="fa fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
                                             </tr>
-                                            <{/foreach}>
                                             </tbody>
                                         </table>
 

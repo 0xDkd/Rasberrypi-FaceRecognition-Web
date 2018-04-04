@@ -21,4 +21,24 @@ class ScanModel extends Model
         $data = $this->dao->fetchAll($sql);
         return $data[0]['scan_num'];
     }
+
+    public function getIllegalScan($offset,$limit)
+    {
+        $sql = "SELECT * FROM `face_scan` WHERE user_id=0 LIMIT $offset,$limit";
+        return $this->dao->fetchAll($sql);
+    }
+
+    public function getIllegalScanCount()
+    {
+        $sql = "SELECT count(user_id) AS illegal_num FROM `face_scan` WHERE user_id=0";
+        $data = $this->dao->fetchAll($sql);
+        return $data[0]['illegal_num'];
+    }
+
+    public function getIllegalScanDetail($s_id)
+    {
+        $where['scan_id'] = $s_id;
+        return $this->find(null,$where);
+    }
+
 }

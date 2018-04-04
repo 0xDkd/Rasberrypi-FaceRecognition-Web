@@ -158,9 +158,9 @@ class apicontroller extends controller
         $en = new encrypt();
         $va = $en->encrypt(md5(time()), $GLOBALS['config']['en_key']);
         $arr = array(
-            'user_id'   => mt_rand(1,100),
+            'user_id'   => 0,//mt_rand(1, 100)
             'user_pic'  => 'https://xxxxxxxx',
-            'user_name' => uniqid('user_',true),
+            'user_name' => 'Unknow',//uniqid('user_',true)
             'time'      => time(),
             'token'     => $va,
             'status'    => '1'

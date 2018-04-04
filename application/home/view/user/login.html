@@ -50,22 +50,8 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle avatar-a" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><img src="/Member/Avatar/user_id/s"
-                                                                           class="img-circle avatar-s">
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/Home">我的文件</a></li>
-                            <li><a href="/Profile/user_id">个人主页</a></li>
-                            <li><a href="/Member/Setting">设置</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/Member/LogOut">退出登录</a></li>
-                        </ul>
-                    </li>
-
                     <li>
-                        <a href="/Login" class="dropdown-toggle" role="button" aria-haspopup="true"
+                        <a href="/?a=loginAction" class="dropdown-toggle" role="button" aria-haspopup="true"
                            aria-expanded="false"><i class="fa fa-user mr-1"></i> 登录/注册 </a>
 
                     </li>
@@ -146,26 +132,26 @@
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputEmail">Email 电子邮箱</label>
-                            <input type="text" class="form-control" id="inputEmail" name="email" >
+                            <input type="text" class="form-control" id="inputEmail" name="email">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputPwd">密码 : 最少6位，必须含有数字和字母</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password" >
+                            <input type="password" class="form-control" id="inputPwd" name="password">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputPwd">重复密码 : 最少6位，必须含有数字和字母</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password-repeat" >
+                            <input type="password" class="form-control" id="inputPwd" name="password-repeat">
                         </div>
                         <div class="input-group form-group label-floating">
                             <label class="control-label" for="captcha">验证码</label>
-                            <input type="text" id="captcha" class="form-control" name="seccode_verify" >
+                            <input type="text" id="captcha" class="form-control" name="seccode_verify">
                             <span class="input-group-btn">
                                 <div class="captcha_img"><img src="/?m=home&c=user&a=makeCaptchaAction" alt=""></div>
                             </span>
                         </div>
                         <div class="input-group form-group label-floating">
                             <label class="control-label" for="inputPwd">认证秘钥</label>
-                            <input type="password" class="form-control" id="inputPwd" name="authenticate" >
+                            <input type="password" class="form-control" id="inputPwd" name="authenticate">
                         </div>
 
                         <div class="input-group form-group label-floating">
@@ -213,11 +199,11 @@
 
             <div class="card_botom">
                 <div class="row bottom-width">
-                    <form id="forgetPwdForm">
+                    <form id="forgetPwdForm" method="post" action="/?m=home&c=user&a=doForgetPassWord">
 
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputEmail">请填写注册时绑定的邮箱</label>
-                            <input type="text" class="form-control" id="regEmail" name="regEmail">
+                            <input type="text" class="form-control" id="regEmail" name="email">
                         </div>
 
 
@@ -225,13 +211,16 @@
                             <label class="control-label" for="captcha">验证码</label>
                             <input type="text" id="captcha" class="form-control" name="captchaCode">
                             <span class="input-group-btn">
-                                                      <div class="captcha_img">验证码地址</div>
+                                                      <div class="captcha_img"><img
+                                                              src="/?m=home&c=user&a=makeCaptchaAction" alt=""></div>
                                                   </span>
                         </div>
-
+                        <div class="input-group form-group label-floating">
+                            <input type="submit" class="btn btn-raised btn-primary" id="findMyFuckingPwd" value="找回密码">
+                        </div>
 
                     </form>
-                    <button class="btn btn-raised btn-primary" id="findMyFuckingPwd">找回密码</button>
+
                     <div class="link-group">
                         <a href="javascript:void" class="noWave" id="loginSwitch2" data-change="true">返回登录</a><br>
                     </div>

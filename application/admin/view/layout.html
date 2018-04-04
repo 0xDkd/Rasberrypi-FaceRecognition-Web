@@ -56,28 +56,26 @@
                            aria-haspopup="true" aria-expanded="false"><img src="<{$smarty.session.gravatar}>" alt="" class="img-circle avatar-s" > <{$smarty.session.user}> <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Profile/user_id">查看注册</a></li>
-                            <li><a href="/?m=admin&c=index&a=settingAction">设置</a></li>
-
-                            <li><a href="/Admin">管理面板</a></li>
-
+                            <li><a href="/?m=admin">管理面板</a></li>
+                            <li><a href="/?m=admin&c=user&a=userDashBroad">查看注册</a></li>
+                            <li><a href="/?m=admin&c=admin&a=settingAction">设置</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/?m=home&c=user&a=doLogout">退出登录</a></li>
-                        <!--</ul>
+                        </ul>
                     </li>
                     <li class="mobile-addition">
-                        <a href="/Share/My" role="button" aria-haspopup="true"><i class="fa fa-share-alt"
-                                                                                  aria-hidden="true"></i> 我的分享</a>
+                        <a href="/?m=admin&c=index&a=indexAction" role="button" aria-haspopup="true"><i class="fa fa-share-alt"
+                                                                                  aria-hidden="true"></i> 信息汇总</a>
                     </li>
                     <li class="mobile-addition">
-                        <a href="/Explore/Search" role="button" aria-haspopup="true"><i class="fa fa-search"
-                                                                                        aria-hidden="true"></i> 搜索分享</a>
+                        <a href="/?m=admin&c=user&a=userDashBroad" role="button" aria-haspopup="true"><i class="fa fa-search"
+                                                                                        aria-hidden="true"></i> 注册用户</a>
                     </li>
                     <li class="mobile-addition">
-                        <a href="/Home/Album" role="button" aria-haspopup="true"><i class="fa fa-picture-o"
-                                                                                    aria-hidden="true"></i> 图片集</a>
+                        <a href="/?m=admin&c=IllegalScan&a=illegalScanUserDashBroad" role="button" aria-haspopup="true"><i class="fa fa-picture-o"
+                                                                                    aria-hidden="true"></i> 非法扫描</a>
                     </li>
-                </ul>-->
+                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -89,10 +87,10 @@
             <a href="/?m=admin&c=user&a=userDashBroad" class="list-group-item"> <i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
                 注册用户
             </a>
-            <a href="/Explore/Search" class="list-group-item">
+            <a href="/?m=admin&c=IllegalScan&a=illegalScanUserDashBroad" class="list-group-item">
                 <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 非法扫描
             </a>
-            <a href="/Home/Album" class="list-group-item">
+            <a href="/?m=admin&c=admin&a=settingAction" class="list-group-item">
                 <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; 设置
             </a>
         </div>

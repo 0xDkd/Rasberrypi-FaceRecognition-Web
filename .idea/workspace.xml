@@ -2,61 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f99d6102-958c-40cc-8079-ab6414b08966" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/admin/controller/ScanController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/admin/controller/UserController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/admin/view/home/setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/admin/view/user/register_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/admin/view/user/user_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/aimer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/controller/AdminController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/controller/IllegalScanController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/illegal/illegal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/illegal/illegal_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/home/view/user/rest_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/controller/ApiController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/ApiController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/IndexController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/ScanController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/ScanController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/model/RegisterUserModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/model/RegisterUserModel.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/model/ScanModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/model/ScanModel.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/model/UserModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/model/UserModel.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/home/set.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/home/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/admin/setting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/view/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/home/controller/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/home/controller/IndexController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/group_buy.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/mdb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/public/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/quota_buy.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/sb-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/share.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/css/share_dir.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/img/default.png_130" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/img/default.png_50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/add_group.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/add_policy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/edit_policy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/files.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/group_list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/order.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/policy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/purchase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/setting.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/shares.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/summernote-zh-CN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/summernote.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/admin/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/album.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/chart.js/Chart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/filemanager_share.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/group_buy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/i18n/zh_CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/highlight.pack.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/markdown-it.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/squire-raw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/toMark.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/tui-code-snippet.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/mdeditor/tui-editor-Editor-all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/public/static/js/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/public/static/js/setting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/core/Controller.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/core/Controller.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/tools/Page.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tools/Page.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/user/register_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user/register_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/user/user_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user/user_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/home/controller/UserController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/home/controller/UserController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/home/view/user/active_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/home/view/user/active_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/home/view/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/home/view/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tools/EmailTemples.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tools/EmailTemples.class.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,7 +31,54 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/home/controller/UserController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailTemples.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/framework/tools/EmailTemples.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="197" column="356" lean-forward="true" selection-start-line="197" selection-start-column="356" selection-end-line="197" selection-end-column="356" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#strong#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -77,9 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>{STATIC_PATH}</find>
-      <find>$dd</find>
-      <find>insert</find>
       <find>return</find>
       <find>var</find>
       <find>Member/Login</find>
@@ -95,18 +104,21 @@
       <find>form</find>
       <find>安全设置</find>
       <find>mdb.css</find>
-      <find>update</find>
       <find>Unknow</find>
       <find>off</find>
       <find>left</find>
       <find>dash</find>
-      <find>/static</find>
       <find>profile</find>
-      <find>default</find>
       <find>img src</find>
       <find>background</find>
       <find>img src=</find>
       <find>认证用户</find>
+      <find>default</find>
+      <find>EP</find>
+      <find>doLogout</find>
+      <find>update</find>
+      <find>/static</find>
+      <find>\{.+?\}</find>
     </findStrings>
     <replaceStrings>
       <replace>{STATIC_PATH}</replace>
@@ -120,13 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/view/navbar_home.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/test.html" />
-        <option value="$PROJECT_DIR$/application/home/view/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/msg.html" />
-        <option value="$PROJECT_DIR$/application/home/view/user/active_success.html" />
-        <option value="$PROJECT_DIR$/application/home/view/user/set.html" />
-        <option value="$PROJECT_DIR$/application/home/view/user/home.html" />
         <option value="$PROJECT_DIR$/application/admin/view/index.html" />
         <option value="$PROJECT_DIR$/application/home/view/admin/all_users.html" />
         <option value="$PROJECT_DIR$/application/admin/controller/ApiController.php" />
@@ -142,35 +147,42 @@
         <option value="$PROJECT_DIR$/application/home/view/email/email.html" />
         <option value="$PROJECT_DIR$/application/home/view/msg.html" />
         <option value="$PROJECT_DIR$/application/home/model/UserModel.class.php" />
-        <option value="$PROJECT_DIR$/framework/tools/EmailTemples.class.php" />
         <option value="$PROJECT_DIR$/framework/tools/Email.class.php" />
-        <option value="$PROJECT_DIR$/application/home/view/user/login.html" />
         <option value="$PROJECT_DIR$/application/home/controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/framework/config/.gitignore" />
         <option value="$PROJECT_DIR$/framework/.gitignore" />
         <option value="$PROJECT_DIR$/application/admin/view/home/layout.html" />
         <option value="$PROJECT_DIR$/application/home/view/layout.html" />
         <option value="$PROJECT_DIR$/application/admin/model/IndexModel.class.php" />
-        <option value="$PROJECT_DIR$/application/home/controller/UserController.class.php" />
         <option value="$PROJECT_DIR$/framework/core/Controller.class.php" />
         <option value="$PROJECT_DIR$/application/public/static/js/setting.js" />
         <option value="$PROJECT_DIR$/application/admin/view/home/setting.html" />
         <option value="$PROJECT_DIR$/application/admin/controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/application/admin/controller/UserController.php" />
-        <option value="$PROJECT_DIR$/application/admin/view/layout.html" />
-        <option value="$PROJECT_DIR$/application/admin/model/ScanModel.class.php" />
         <option value="$PROJECT_DIR$/application/admin/model/UserModel.class.php" />
-        <option value="$PROJECT_DIR$/application/admin/controller/ApiController.class.php" />
         <option value="$PROJECT_DIR$/framework/core/Model.class.php" />
         <option value="$PROJECT_DIR$/framework/tools/Page.class.php" />
-        <option value="$PROJECT_DIR$/application/admin/view/home/home.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/user/register_user.html" />
         <option value="$PROJECT_DIR$/application/public/static/css/profile.css" />
         <option value="$PROJECT_DIR$/framework/config/config.php" />
-        <option value="$PROJECT_DIR$/application/admin/controller/ScanController.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/ApiController.class.php" />
         <option value="$PROJECT_DIR$/application/admin/model/RegisterUserModel.class.php" />
         <option value="$PROJECT_DIR$/application/admin/controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/user/register_user.html" />
+        <option value="$PROJECT_DIR$/application/admin/model/ScanModel.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/illegal/illegal_detail.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/ScanController.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/controller/IllegalScanController.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/home/home.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/illegal/illegal.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/admin/setting.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/AdminController.class.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/layout.html" />
         <option value="$PROJECT_DIR$/application/admin/view/user/user_detail.html" />
+        <option value="$PROJECT_DIR$/application/home/view/user/active_success.html" />
+        <option value="$PROJECT_DIR$/application/home/view/user/login.html" />
+        <option value="$PROJECT_DIR$/application/home/view/user/rest_password.html" />
+        <option value="$PROJECT_DIR$/application/home/controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/framework/tools/EmailTemples.class.php" />
       </list>
     </option>
   </component>
@@ -203,114 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -350,6 +254,76 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="email" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Face" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tools" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,22 +338,22 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.quicklists" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/admin/view" />
-      <recent name="$PROJECT_DIR$/framework/config" />
-      <recent name="$PROJECT_DIR$/application/home/runtime" />
-      <recent name="$PROJECT_DIR$/application/home/view/admin" />
-      <recent name="$PROJECT_DIR$/application/home/view" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/admin/view/admin" />
       <recent name="$PROJECT_DIR$/application/admin/view/home" />
       <recent name="$PROJECT_DIR$/application/admin/view" />
       <recent name="$PROJECT_DIR$/framework" />
       <recent name="$PROJECT_DIR$/application/public/fonts" />
-      <recent name="$PROJECT_DIR$/application/admin/runtime" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/admin/view/illegal" />
+      <recent name="$PROJECT_DIR$/application/admin/view" />
+      <recent name="$PROJECT_DIR$/framework/config" />
+      <recent name="$PROJECT_DIR$/application/home/runtime" />
+      <recent name="$PROJECT_DIR$/application/home/view/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -417,32 +391,35 @@
       <workItem from="1522645602017" duration="536000" />
       <workItem from="1522646155298" duration="28137000" />
       <workItem from="1522733855353" duration="22209000" />
+      <workItem from="1522766004392" duration="341000" />
+      <workItem from="1522821962583" duration="11822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92098000" />
+    <option name="totallyTimeSpent" value="104261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.209375" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.209375" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
@@ -489,39 +466,74 @@
     <entry file="file://$PROJECT_DIR$/application/admin/view/navbar_home.html" />
     <entry file="file://$PROJECT_DIR$/application/admin/view/test.html" />
     <entry file="file://$PROJECT_DIR$/application/admin/model/IndexModel.class.php" />
-    <entry file="file://$PROJECT_DIR$/application/public/static/js/i18n/zh_CN.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/public/static/js/chart.js/Chart.min.js">
+    <entry file="file://$PROJECT_DIR$/application/public/static/js/chart.js/Chart.min.js" />
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/IllegalScanController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="866">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#115#145#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/IndexController.class.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="620">
+          <caret line="65" column="63" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/model/ScanModel.class.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/tools/Page.class.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/UserController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        <state relative-caret-position="306">
+          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding>
+            <element signature="e#115#145#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/ApiController.class.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/illegal/illegal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="112" column="38" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
+        <state relative-caret-position="420">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/admin/setting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1183">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/core/Model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="162" column="24" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/AdminController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
           <folding>
             <element signature="e#115#145#0#PHP" expanded="true" />
           </folding>
@@ -530,94 +542,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/model/UserModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="490">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/register_user.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="65" selection-end-column="10" />
+        <state relative-caret-position="383">
+          <caret line="60" column="66" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4235#4241#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/home/home.html">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="512">
+          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/public/static/img/profile.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/public/static/css/profile.css">
+    <entry file="file://$PROJECT_DIR$/application/home/view/user/active_success.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1403">
-          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+        <state relative-caret-position="-1015">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/user/rest_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3701">
+          <caret line="122" column="28" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/home/controller/UserController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1806" />
+        <state relative-caret-position="684">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/user/user_detail.html">
+    <entry file="file://$PROJECT_DIR$/framework/tools/EmailTemples.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3605">
-          <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
+        <state relative-caret-position="626">
+          <caret line="197" column="356" lean-forward="true" selection-start-line="197" selection-start-column="356" selection-end-line="197" selection-end-column="356" />
           <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#header#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/UserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-          <folding>
-            <element signature="e#115#145#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/core/Model.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="149" column="20" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/ScanController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding>
-            <element signature="e#115#145#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/model/RegisterUserModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="36" />
         </state>
       </provider>
     </entry>

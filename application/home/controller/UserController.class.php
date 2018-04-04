@@ -39,6 +39,12 @@ class UserController extends Controller
         }
     }
 
+
+    public function resetPassWordAction()
+    {
+        $this->smarty->display('user/rest_password.html');
+    }
+
     public function doRegisterAction()
     {
         if ($this->isLogin()) {
@@ -115,6 +121,26 @@ class UserController extends Controller
 
     }
 
+    public function doForgetPassWord()
+    {
+        $model = Factory::M('User');
+        //Check user exist or not
+        $where['email'] = $_POST['email'];
+        $regex = new Regex();
+        $checkEmail = $regex->checkEmail($_POST['email']);
+        if (!$checkEmail) {
+            $this->showActionInfo('邮箱格式不正确');
+        }
+        $user = $model->find(null, $where);
+        if ($user) {
+            //Send Email
+            $email = new EmailTemples();
+
+        } else {
+            $this->showActionInfo('用户名不存在');
+        }
+    }
+
     public function doLogout()
     {
         $this->isLogin();
@@ -127,6 +153,7 @@ class UserController extends Controller
         setcookie('keysid', '', time() - 1);
         $this->showActionInfo('退出成功', '希望下次再来哟～', '/', '返回首页', '2000');
     }
+
 
     public function makeCaptchaAction()
     {
@@ -161,8 +188,8 @@ class UserController extends Controller
         $regexTest = new Regex();
         //Use Regex Tool to check
         $checkUser = $regexTest->checkUser(null, null, $_POST['user_name']);
-        $checkEmail = $regexTest->checkPassWord($_POST['password']);
-        $checkPassword = $regexTest->checkEmail($_POST['email']);
+        $checkPassword = $regexTest->checkPassWord($_POST['password']);
+        $checkEmail = $regexTest->checkEmail($_POST['email']);
         if ($checkUser && $checkEmail && $checkPassword) {
             return true;
         } else {
