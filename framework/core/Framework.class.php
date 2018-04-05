@@ -55,7 +55,7 @@ class Framework
         //Thumb path
         define("THUMB_PATH", './application/public/thumb/');
         //Font path
-        define("FONT_PATH", './application/public/fonts/');
+        define("FONT_PATH", APP_PATH.'/public/fonts/');
         //Static_vendor
         define("STATIC_PATH",'./application/public/static');
     }
@@ -87,7 +87,7 @@ class Framework
         if ($arr[0] == 'framework') {
             $base_path = './';
         } else {
-            $base_path = './application/';
+            $base_path = APP_PATH;
         }
         //3.
         $sub_path = str_replace('\\', '/', $class_name);
@@ -99,6 +99,7 @@ class Framework
             $fix = '.class.php';
         }
         $class_file = $base_path . $sub_path . $fix;
+        //var_dump($class_file);
         //5.load Class
         if (file_exists($class_file)) {
             require_once $class_file;

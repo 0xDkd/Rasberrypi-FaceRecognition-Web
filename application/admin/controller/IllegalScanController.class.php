@@ -24,7 +24,7 @@ class IllegalScanController extends Controller
             $illegal_scans_num = $page->total_pages = $s_model->getIllegalScanCount();
 
             //How many data in one page
-            $page->url = '/?m=admin&c=illegalScan&a=illegalScanUserDashBroad&';
+            $page->url = '/?m=admin&c=IllegalScan&a=illegalScanUserDashBroad&';
             $page->pagesize = $GLOBALS['config']['page_limit'];
             //Now page
             $page->now_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -38,7 +38,7 @@ class IllegalScanController extends Controller
             $this->smarty->assign('page_bar', $page_bar);
             $this->smarty->display('illegal/illegal.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?a=loginAction', '登录', 2000);
         }
     }
 
@@ -50,7 +50,7 @@ class IllegalScanController extends Controller
             $this->smarty->assign('detail',$detail[0]);
             $this->smarty->display('illegal/illegal_detail.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 }

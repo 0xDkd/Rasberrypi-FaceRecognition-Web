@@ -21,7 +21,7 @@ class IndexController extends Controller
             $r_model = Factory::M('RegisterUser');
             $num = $r_model->getNum();
             //管理员信息
-            $u_model = Factory::M('user');
+            $u_model = Factory::M('User');
             $user = $_SESSION['user'];
             $data = $u_model->getInfo($user);
             $url = " https://cdn.v2ex.com/gravatar/" . md5($data[0]['email']) . ".png";
@@ -29,7 +29,7 @@ class IndexController extends Controller
             $this->smarty->assign('num', $num);
             $this->smarty->display('home/home.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 }

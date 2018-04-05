@@ -18,13 +18,13 @@ class AdminController extends Controller
     public function settingAction()
     {
         if ($this->isLogin()) {
-            $a_model = Factory::M('user');
+            $a_model = Factory::M('User');
             $name = $_SESSION['user'];
             $admin = $a_model->getInfo($name);
             $this->smarty->assign('admin', $admin[0]);
             $this->smarty->display('admin/setting.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 
@@ -65,7 +65,7 @@ class AdminController extends Controller
                 $this->showActionInfo('验证秘钥不正确', null, null, null, 2000);
             }
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 

@@ -21,8 +21,8 @@ return array(
 
     //数据库配置选项
     'host'               => 'localhost',
-    'user'               => 'homestead',
-    'pass'               => 'secret',
+    'user'               => 'root',
+    'pass'               => '5fee5300a6d2682c',
     'dbname'             => 'face',
     'port'               => '3306',
     'charset'            => 'utf8',

@@ -32,6 +32,7 @@ class UserController extends Controller
 
     public function loginAction()
     {
+      	
         if ($this->isLogin()) {
             $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
         } else {
@@ -47,6 +48,7 @@ class UserController extends Controller
 
     public function doRegisterAction()
     {
+      
         if ($this->isLogin()) {
             $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
         } else {
@@ -96,7 +98,7 @@ class UserController extends Controller
             }
             $data['name'] = $_POST['user_name'];
             $data['password'] = md5($_POST['password']);
-            $model = Factory::M('user');
+            $model = Factory::M('User');
             //check $_POST data
             if ($model->loginCheck($data['name'], $data['password'])) {
                 //Check is active or not
@@ -158,7 +160,8 @@ class UserController extends Controller
     public function makeCaptchaAction()
     {
         $captcha = new Captcha();
-        $captcha->font_file = FONT_PATH . 'FiraCode-Light.TTF';
+        $captcha->font_file = FONT_PATH.'FiraCode-Light.ttf';
+      	//var_dump(file_exists($captcha->font_file));
         $captcha->height = 40;
         $captcha->makeImage();
     }
@@ -174,7 +177,7 @@ class UserController extends Controller
         $data['is_active'] = 0;
         $data['reg_time'] = time();
 
-        $model = Factory::M('user');
+        $model = Factory::M('User');
         $model->insert($data);
 
         //Send Email
@@ -206,10 +209,10 @@ class UserController extends Controller
             if ($validityPeriod > 24 * 3600) {
                 $this->showActionInfo('激活码过期');
             } elseif ($this->isActive($_GET['user'])) {
-                $this->showActionInfo('您已激活', '您可以直接登录啦～', '/?c=user&a=loginAction', '<< 去登录');
+                $this->showActionInfo('您已激活', '您可以直接登录啦～', '/?c=User&a=loginAction', '<< 去登录');
             } else {
                 $this->doActive($_GET['user']);
-                $this->showActionInfo('激活成功！', '请在这里开始一段新的 旅程吧～', '/?c=user&a=loginAction', '<< 去登录');
+                $this->showActionInfo('激活成功！', '请在这里开始一段新的 旅程吧～', '/?c=User&a=loginAction', '<< 去登录');
             }
         } else {
             $this->showActionInfo('激活失败', '您对激活链接不正确，请重试');
@@ -227,13 +230,13 @@ class UserController extends Controller
 
     private function doActive($user_name)
     {
-        $model = Factory::M('user');
+        $model = Factory::M('User');
         $model->makeActive($user_name);
     }
 
     private function isCode($code, $user)
     {
-        $model = Factory::M('user');
+        $model = Factory::M('User');
         return $model->checkCode($code, $user);
     }
 

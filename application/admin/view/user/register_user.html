@@ -49,7 +49,7 @@
             <{foreach $users as $user}>
             <tr>
                 <td><{$user['user_id']}></td>
-                <td><a href="/?m=admin&c=user&a=userDetail&u_id=<{$user['user_id']}>" target="_blank"><{$user['user_name']}></a></td>
+                <td><a href="/?m=admin&c=User&a=userDetail&u_id=<{$user['user_id']}>" target="_blank"><{$user['user_name']}></a></td>
                 <td><span href="#" class="badge badge-warning" style="background-color: #4dd566"><{$user['scan_num']|default:'1'}></span></td>
             </tr>
             <{/foreach}>

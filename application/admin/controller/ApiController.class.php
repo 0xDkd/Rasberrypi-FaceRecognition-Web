@@ -6,19 +6,19 @@
  * Time: 下午3:49
  */
 
-namespace admin\controller;
+namespace admin\Controller;
 
 
-use framework\core\controller;
-use framework\core\factory;
-use framework\tools\encrypt;
-use framework\tools\httprequest;
+use framework\core\Controller;
+use framework\core\Factory;
+use framework\tools\Encrypt;
+use framework\tools\HttpRequest;
 use framework\tools\Upload;
 
-class apicontroller extends controller
+class ApiController extends Controller
 {
 
-    private $statuscode = array(
+    private $statusCode = array(
         '401' => 'token miss',
         '402' => 'time out',
         '403' => 'forbidden',
@@ -48,11 +48,11 @@ class apicontroller extends controller
         } else {
             $urldecode_str = urldecode($input_str);
             $data = json_decode($urldecode_str, true);;
-            $en = new encrypt();
-            $va = $en->encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
+            $en = new Encrypt();
+            $va = $en->Encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
             //token failed
             if ($va != $data['token']) {
-                $this->showinfo('405');
+                $this->showInfo('405');
             }
             //check keys
             $keys = array_keys($data);
@@ -61,7 +61,7 @@ class apicontroller extends controller
             $pa = true;
             foreach ($keys as $key) {
                 if (!in_array($key, $keys_must)) {
-                    $this->showinfo('406');
+                    $this->showInfo('406');
                 }
             }
             //Check time
@@ -78,16 +78,16 @@ class apicontroller extends controller
      */
     private function rejectget()
     {
-        $this->showinfo('101');
+        $this->showInfo('101');
     }
 
     /**
      * Insert into Mysql .
      * @param $data
      */
-    private function doinsertdata($data)
+    private function doInsertData($data)
     {
-        $s_model = factory::M('scan');
+        $s_model = Factory::M('Scan');
         //unknow user
         if ($data['user_id'] == 0) {
             $s_data['status'] = 0;
@@ -97,11 +97,11 @@ class apicontroller extends controller
             //insert
             $s_model->insert($s_data);
             //status code
-            $this->showinfo('201');
+            $this->showInfo('201');
         }
         //true user
         //check user is exist or not
-        $u_model = factory::M('registeruser');
+        $u_model = Factory::M('Registeruser');
         $is_ex = $u_model->checkuser($data['user_id']);
         $s_data['status'] = $data['status'];
         $s_data['scan_time'] = $data['time'];
@@ -112,7 +112,7 @@ class apicontroller extends controller
             //insert
             $s_model->insert($s_data);
         } else {
-            $s_model = factory::M('scan');
+            $s_model = Factory::M('Scan');
             $u_data['user_name'] = $data['user_name'];
             $u_data['user_id'] = $data['user_id'];
             //insert
@@ -121,7 +121,7 @@ class apicontroller extends controller
 
         }
         //Success
-        $this->showinfo('200');
+        $this->showInfo('200');
 
     }
     //TODO:FILES
@@ -146,17 +146,17 @@ class apicontroller extends controller
     private function checkTime($data)
     {
         if (time() - $data['time'] > 60) {
-            $this->showinfo('402');
+            $this->showInfo('402');
         }
     }
 
     /**
      * Test get Json ,Do not use in real web
      */
-    public function makejson()
+    public function makeJson()
     {
-        $en = new encrypt();
-        $va = $en->encrypt(md5(time()), $GLOBALS['config']['en_key']);
+        $en = new Encrypt();
+        $va = $en->Encrypt(md5(time()), $GLOBALS['config']['en_key']);
         $arr = array(
             'user_id'   => 0,//mt_rand(1, 100)
             'user_pic'  => 'https://xxxxxxxx',
@@ -171,7 +171,7 @@ class apicontroller extends controller
         $keys = ['user_id', 'user_pic', 'user_name', 'time', 'token', 'status1'];
         $keys_must = array('user_id', 'user_pic', 'user_name', 'time', 'token', 'status');
         $pa = true;
-        $curl = new httprequest();
+        $curl = new HttpRequest();
         $curl->url = 'http://face.test/?m=admin&c=api&a=getdata';
         $result = $curl->send($js);
         var_dump($result);
@@ -183,7 +183,7 @@ class apicontroller extends controller
      */
     private function showInfo($code)
     {
-        die($code . '<br>' . $this->statuscode[$code]);
+        die($code . '<br>' . $this->statusCode[$code]);
     }
 
     /**

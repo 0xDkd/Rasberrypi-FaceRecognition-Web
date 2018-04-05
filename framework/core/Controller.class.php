@@ -52,7 +52,7 @@ class Controller
         if (isset($_SESSION['user'])) {
             //Remember me
             if (isset($_COOKIE['uname'])) {
-                $m_user = Factory::M('home\model\user');
+                $m_user = Factory::M('home\model\User');
                 $result = $m_user->loginCheck($_COOKIE['uname'], $_COOKIE['keysid']);
                 //If user update his password
                 if (!$result) {

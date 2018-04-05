@@ -20,7 +20,7 @@ class UserController extends Controller
         if ($this->isLogin()) {
             $this->smarty->display('home/setting.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 
@@ -34,7 +34,7 @@ class UserController extends Controller
             $uer_num = $page->total_pages = $u_model->getUserCount();
             //var_dump($u_model->getUserCount());
             //How many data in one page
-            $page->url = '/?m=admin&c=user&a=userDashBroad&';
+            $page->url = '/?m=admin&c=User&a=userDashBroad&';
             $page->pagesize = $GLOBALS['config']['page_limit'];
             //Now page
             $page->now_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -48,7 +48,7 @@ class UserController extends Controller
             $this->smarty->assign('users', $users);
             $this->smarty->display('user/register_user.html');
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 
@@ -64,7 +64,7 @@ class UserController extends Controller
             //var_dump($user);
 
         } else {
-            $this->showActionInfo('请登录', null, '/?c=user&a=loginAction', '登录', 2000);
+            $this->showActionInfo('请登录', null, '/?c=User&a=loginAction', '登录', 2000);
         }
     }
 

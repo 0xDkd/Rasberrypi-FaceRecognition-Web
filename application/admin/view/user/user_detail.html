@@ -47,10 +47,10 @@
                         <a href="#" class="dropdown-toggle avatar-a" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="<{$smarty.session.gravatar}>" class="img-circle avatar-s"> <{$smarty.session.user}> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/?m=admin">仪表盘</a></li>
-                            <li><a href="/?m=admin&c=user&a=userDashBroad">认证情况</a></li>
-                            <li><a href="/?m=admin&c=admin&a=setting">设置</a></li>
+                            <li><a href="/?m=admin&c=User&a=userDashBroad">认证情况</a></li>
+                            <li><a href="/?m=admin&c=Admin&a=settingAction">设置</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/?m=home&c=user&a=doLogout">退出登录</a></li>
+                            <li><a href="/?m=home&c=User&a=doLogout">退出登录</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -136,7 +136,7 @@
                                                     <a href="<{$u['pic']}>" class="fname" target="_blank">图片(点击查看)</a></td>
                                                 <td class="cent"><{$u['time']|date_format:'%Y-%m-%d %H:%M:%S'}></td>
                                                 <td align="center"><span class="label span-fix label-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span></td>
-                                                <td align="center"> <a href="?m=admin&c=scan&a=showDelete&scan_id=<{$u['scan_id']}>&u_id=<{$u['user_id']}>" class="btn btn-danger btn-raised" target="_blank">删除 <i class="fa fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
+                                                <td align="center"> <a href="?m=admin&c=Scan&a=showDelete&scan_id=<{$u['scan_id']}>&u_id=<{$u['user_id']}>" class="btn btn-danger btn-raised" target="_blank">删除 <i class="fa fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
                                             </tr>
                                             <{/foreach}>
                                             </tbody>

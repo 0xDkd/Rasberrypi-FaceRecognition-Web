@@ -49,8 +49,8 @@
             <{foreach $illegal_scans as $scan}>
             <tr>
                 <td><{$scan['scan_id']}></td>
-                <td><a href="/?m=admin&c=illegalScan&a=illegalScanDetail&s_id=<{$scan['scan_id']}>" target="_blank"><i class="fa fa-clock-o"></i> <{$scan['scan_time']|date_format:'%Y-%m-%d %H:%M:%S'}></a></td>
-                <td><a href="/?m=admin&c=illegalScan&a=illegalScanDetail&s_id=<{$scan['scan_id']}>" class="badge badge-warning" style="background-color: #ef4349">未通过</a>
+                <td><a href="/?m=admin&c=IllegalScan&a=illegalScanDetail&s_id=<{$scan['scan_id']}>" target="_blank"><i class="fa fa-clock-o"></i> <{$scan['scan_time']|date_format:'%Y-%m-%d %H:%M:%S'}></a></td>
+                <td><a href="/?m=admin&c=IllegalScan&a=illegalScanDetail&s_id=<{$scan['scan_id']}>" class="badge badge-warning" style="background-color: #ef4349">未通过</a>
                 </td>
             </tr>
             <{/foreach}>
