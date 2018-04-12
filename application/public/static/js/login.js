@@ -75,6 +75,63 @@ function switchToForget() {
     $("#forgetForm").addClass("animated zoomIn");
 }
 
+var oName = document.getElementsByName('user_name-r')[0];
+var oPass = document.getElementsByName('password-r')[0];
+var oPassRepeat = document.getElementsByName('password-repeat-r')[0];
+var oEmail = document.getElementsByName('email-r')[0];
+
+function validate() {
+    var r1 = checkEmail();
+    var r2 = checkPassWord();
+    var r3 = checkUserName();
+    if (r1 && r2 && r3){
+        return true;
+    } else{
+        return false;
+    }
+
+}
+
+function checkEmail() {
+    var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    var result = reg.test(oEmail.value);
+    if (result) {
+        return true;
+    } else {
+        sweetAlert("邮箱不符合规则", "请重新添写邮箱", "error");
+        return false;
+    }
+
+}
+
+function checkUserName() {
+    var reg = /^[a-zA-Z][\w-_]{5,29}$/;
+    var result = reg.test(oName.value);
+    if (result) {
+        return true;
+    } else {
+        sweetAlert("用户名不符合规则", "请重新添写", "error");
+        return false;
+    }
+
+}
+
+function checkPassWord() {
+    if (oPass.value === oPassRepeat.value) {
+        var reg = /^[\w!@#$%%^&*(*)_+-=]{6,15}$/;
+        var result = reg.test(oPass.value);
+        if (result) {
+            return true;
+        } else {
+            sweetAlert("密码不符合规则", "请重新添写", "error");
+            return false;
+        }
+    } else {
+        sweetAlert("两次密码不一致", "请重新添写", "error");
+        return false;
+    }
+
+}
 
 $("#create").click(function () {
     switchToReg()
@@ -85,6 +142,3 @@ $("#forgetSwitch,#forgetSwitch2").click(function () {
 $("#loginSwitch2,#loginSwitch,#loginSwitch3").click(function () {
     switchToLog()
 });
-$("#qqLogin").click(function () {
-    window.location.href = "/Member/QQLogin";
-})

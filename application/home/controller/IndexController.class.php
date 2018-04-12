@@ -15,25 +15,13 @@ class IndexController extends Controller
         $this->isLogin();
         $this->smarty->display('index.html');
     }
-
-    public function activeAction()
-    {
-        $this->smarty->display('user/active_success.html');
-    }
-
     public function  loginAction()
     {
         $this->smarty->display('user/login.html');
     }
-
-    public function setAction()
+    public function justTest()
     {
-        $this->smarty->display('user/setting.html');
-    }
-
-    public function homeAction()
-    {
-        $this->smarty->display('user/all_users.html');
+        $this->smarty->display('test.html');
     }
 
 }

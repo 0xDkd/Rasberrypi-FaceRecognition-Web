@@ -52,30 +52,26 @@ class UserController extends Controller
         if ($this->isLogin()) {
             $this->showActionInfo('您已经登录', null, '/?m=admin', '返回', 3000);
         } else {
-
-
-            //Check Captcha
-            session_start();
             if (strtolower($_SESSION['code']) == strtolower($_POST['seccode_verify'])) {
                 //check authenticate
                 if ($_POST['authenticate'] != $GLOBALS['config']['authenticate_code']) {
                     $this->showActionInfo('认证秘钥错误！');
                 }
                 //check password is same
-                if ($_POST['password'] != $_POST['password-repeat']) {
+                if ($_POST['password-r'] != $_POST['password-repeat-r']) {
                     $this->showActionInfo('两次密码不一致');
                 }
                 //Check Email & Username & Password
                 if ($this->checkUEP()) {
                     //Check the user has already in here
                     $m_user = Factory::M('User');
-                    $result = $m_user->checkRepeatUser($_POST['user_name'], $_POST['email']);
+                    $result = $m_user->checkRepeatUser($_POST['user_name-r'], $_POST['email-r']);
                     if (!$result) {
                         //If repeat
                         $this->showActionInfo('用户已经存在');
                     } else {
                         //Send Active Link
-                        $this->emailConfig($_POST['email'], $_POST['user_name']);
+                        $this->emailConfig($_POST['email-r'], $_POST['user_name-r']);
                     }
                 } else {
                     //
@@ -170,9 +166,9 @@ class UserController extends Controller
     {
         $email = new EmailTemples();
         //Insert into MySQL
-        $data['name'] = $_POST['user_name'];
-        $data['password'] = md5($_POST['password']);
-        $data['email'] = $_POST['email'];
+        $data['name'] = $_POST['user_name-r'];
+        $data['password'] = md5($_POST['password-r']);
+        $data['email'] = $_POST['email-r'];
         $data['active_code'] = $email->en_code;
         $data['is_active'] = 0;
         $data['reg_time'] = time();
@@ -181,7 +177,7 @@ class UserController extends Controller
         $model->insert($data);
 
         //Send Email
-        $email->activeEmail($_POST['email'], $_POST['user_name']);
+        $email->activeEmail($_POST['email-r'], $_POST['user_name-r']);
 
         $this->showActionInfo('注册邮件已发送～', '请仔细检查您对邮箱哟～', '/', '< 返回首页');
     }
@@ -190,9 +186,9 @@ class UserController extends Controller
     {
         $regexTest = new Regex();
         //Use Regex Tool to check
-        $checkUser = $regexTest->checkUser(null, null, $_POST['user_name']);
-        $checkPassword = $regexTest->checkPassWord($_POST['password']);
-        $checkEmail = $regexTest->checkEmail($_POST['email']);
+        $checkUser = $regexTest->checkUser(null, null, $_POST['user_name-r']);
+        $checkPassword = $regexTest->checkPassWord($_POST['password-r']);
+        $checkEmail = $regexTest->checkEmail($_POST['email-r']);
         if ($checkUser && $checkEmail && $checkPassword) {
             return true;
         } else {

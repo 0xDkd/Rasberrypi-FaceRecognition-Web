@@ -1,4 +1,4 @@
-<html lang="zh-cn" data-ng-app="FileManagerApp">
+<html lang="zh-cn" >
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/material.css"/>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/animate.css"/>
+    <link href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
     <script src="<{STATIC_PATH}>/js/material.js"></script>
     <script src="<{STATIC_PATH}>/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/font-awesome.min.css">
-    <!-- /third party -->
-    <!-- Comment if you need to use raw source code -->
-    <link href="<{STATIC_PATH}>/css/toastr.min.css" rel="stylesheet">
-    <script type="text/javascript" src="<{STATIC_PATH}>/js/toastr.min.js"></script>
-    <!-- /Comment if you need to use raw source code -->
+
 
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/login.css"/>
     <link rel="stylesheet" href="<{STATIC_PATH}>/css/photoswipe.css">
@@ -125,22 +122,22 @@
 
             <div class="card_botom">
                 <div class="row bottom-width">
-                    <form id="registerForm" method="post" action="/?m=home&c=User&a=doRegisterAction">
+                    <form id="registerForm" method="post" action="/?m=home&c=User&a=doRegisterAction" onsubmit="return validate()">
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputUserName">用户名</label>
-                            <input type="text" class="form-control" id="inputUserName" name="user_name">
+                            <input type="text" class="form-control" id="inputUserName" name="user_name-r">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputEmail">Email 电子邮箱</label>
-                            <input type="text" class="form-control" id="inputEmail" name="email">
+                            <input type="text" class="form-control" id="inputEmail" name="email-r">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputPwd">密码 : 最少6位，必须含有数字和字母</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password">
+                            <input type="password" class="form-control" id="inputPwd" name="password-r">
                         </div>
                         <div class="form-group  label-floating">
                             <label class="control-label" for="inputPwd">重复密码 : 最少6位，必须含有数字和字母</label>
-                            <input type="password" class="form-control" id="inputPwd" name="password-repeat">
+                            <input type="password" class="form-control" id="inputPwd" name="password-repeat-r">
                         </div>
                         <div class="input-group form-group label-floating">
                             <label class="control-label" for="captcha">验证码</label>
@@ -239,6 +236,8 @@
 
 
 </script>
+<script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="<{STATIC_PATH}>/js/login.js"></script>
+
 
 </html>

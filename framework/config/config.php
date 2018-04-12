@@ -21,8 +21,8 @@ return array(
 
     //数据库配置选项
     'host'               => 'localhost',
-    'user'               => 'root',
-    'pass'               => '5fee5300a6d2682c',
+    'user'               => 'homestead',
+    'pass'               => 'secret',
     'dbname'             => 'face',
     'port'               => '3306',
     'charset'            => 'utf8',
@@ -43,12 +43,12 @@ return array(
 
     //SMTP配置
     'smtp'               => true,
-    'email_host'         => 'smtpdm.aliyun.com',
+    'email_host'         => '',
     'email_safe'         => 'ssl',
     'Port'               => 465,
-    'sender'             => 'no-reply@acgbuster.com',
+    'sender'             => '',
     'E_nickname'         => '测试',
-    'account'            => 'no-reply@acgbuster.com',
-    'token'              => 'SUNacgLIUbuster123',
+    'account'            => '',
+    'token'              => '',
 );
 
