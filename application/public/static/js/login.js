@@ -130,7 +130,11 @@ function checkPassWord() {
         sweetAlert("两次密码不一致", "请重新添写", "error");
         return false;
     }
-
+}
+function rImg(e)
+{
+    e.src = 'http://face.test/?m=home&c=User&a=makeCaptchaAction&tm='+Math.random();
+    console.log(e.src);
 }
 
 $("#create").click(function () {
