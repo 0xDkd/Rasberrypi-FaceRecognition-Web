@@ -3,7 +3,7 @@
  * Created by aimer.
  * User: aimer
  * Date: 2018/4/1
- * Time: 下午3:49
+ * Time: ä¸ĺ3:49
  */
 
 namespace admin\Controller;
@@ -11,12 +11,12 @@ namespace admin\Controller;
 
 use framework\core\Controller;
 use framework\core\Factory;
-use framework\tools\Encrypt;
 use framework\tools\HttpRequest;
 use framework\tools\Upload;
 
 class ApiController extends Controller
 {
+
 
     private $statusCode = array(
         '401' => 'token miss',
@@ -33,7 +33,6 @@ class ApiController extends Controller
     private $forbiddenList = array(//Please write ip
     );
 
-
     /**
      * Get post data
      */
@@ -47,9 +46,12 @@ class ApiController extends Controller
             return $this->rejectget();
         } else {
             $urldecode_str = urldecode($input_str);
-            $data = json_decode($urldecode_str, true);;
-            $en = new Encrypt();
-            $va = $en->Encrypt(md5($data['time']), $GLOBALS['config']['en_key']);
+            $data = json_decode($urldecode_str, true);
+            //Store json post time
+            file_put_contents(UPLOADS_PATH.'post.json',$data['time']);
+            $va = md5($data['time']);
+            $key = md5('thisisatest');
+            $va = $va . $key . $va;
             //token failed
             if ($va != $data['token']) {
                 $this->showInfo('405');
@@ -136,7 +138,18 @@ class ApiController extends Controller
         $upload->maxsize = 1000 * 1024;
         $upload->prefix = 'face';
         $input_str = file_get_contents("php://input");
-        $path = $upload->doBinaryUpload($input_str);
+        if (!empty($input_str)) {
+            $path = $upload->doBinaryUpload($input_str);
+            $path = UPLOADS_PATH.$path;
+            //Find 30s Json
+            $where['scan_time'] = file_get_contents(UPLOADS_PATH.'post.json');
+            $data['scan_pic'] = $path;
+            $s_model = Factory::M('Scan');
+            $s_model->update($data,$where);
+        } else {
+            //file_put_contents('/www/wwwroot/face.0w0.tn/Face/application/public/uploads/20180406',$input_str);
+        }
+
     }
 
     /**
@@ -146,6 +159,7 @@ class ApiController extends Controller
     private function checkTime($data)
     {
         if (time() - $data['time'] > 60) {
+            echo time();
             $this->showInfo('402');
         }
     }
@@ -155,15 +169,17 @@ class ApiController extends Controller
      */
     public function makeJson()
     {
-        $en = new Encrypt();
-        $va = $en->Encrypt(md5(time()), $GLOBALS['config']['en_key']);
+        $va = md5(time());
+        $key = md5('thisisatest');
+        $va = $va . $key . $va;
         $arr = array(
             'user_id'   => 0,//mt_rand(1, 100)
             'user_pic'  => 'https://xxxxxxxx',
             'user_name' => 'Unknow',//uniqid('user_',true)
             'time'      => time(),
             'token'     => $va,
-            'status'    => '1'
+            'status'    => '1',
+            //'time_md5'  => md5(1522973837)
         );
         var_dump($arr);
         $js = json_encode($arr);
@@ -172,7 +188,7 @@ class ApiController extends Controller
         $keys_must = array('user_id', 'user_pic', 'user_name', 'time', 'token', 'status');
         $pa = true;
         $curl = new HttpRequest();
-        $curl->url = 'http://face.test/?m=admin&c=api&a=getdata';
+        $curl->url = 'http://face.test/?m=admin&c=Api&a=getData';
         $result = $curl->send($js);
         var_dump($result);
     }
